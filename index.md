@@ -195,7 +195,7 @@ var bulk = new BulkOperation(connection);
 							<input type="hidden" name="currency_code" value="USD">
 							<fieldset class="form-group">
 								<input type="hidden" name="on0" value="Seats">
-								<select name="hosted_button_id" class="form-control" onchange="selectProduct()">
+								<select id="provider_type" name="hosted_button_id" class="form-control" onchange="selectProduct()">
 									<option value="P4LJES7RRRMRE">SQL Server/ Azure Provider</option>
 									<option value="VL4K5FXSRWV88">SQL Compact Provider</option>
 									<option value="MVSYAVJHUY9DS">SQLite Provider</option>
