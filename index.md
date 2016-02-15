@@ -7,15 +7,15 @@ layout: post
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<meta name="description" content="Entity Framework Plus | BulkSaveChanges | Bulk Insert, Update, Delete and Merge | Query Cache | Query Filter | Query Include | Query Future | Query IncludeFilter | Audit">
-		<meta name="keywords" content="BulkSaveChanges | Bulk Insert, Update, Delete and Merge | Query Cache | Query Filter | Query Future | Query IncludeFilter | Audit">
+		<meta name="description" content="C# Bulk Insert, update, delete and merge in SQL Server, SQL Azure, SQL Compact, MySQL and SQLite">
+		<meta name="keywords" content="BulkSaveChanges BulkInsert BulkUpdate BulkDelete BulkMerge Insert Update Delete Merge SQLServer SQLAzure SQLCompact MySQL SQLite">
 		<meta name="msvalidate.01" content="89359D9C492A475C0061398008D105FB" />
-		<title>Entity Framework Plus | Bulk Operations & Utilities</title>
-		<link rel="icon" type="image/png" href="http://entityframework-plus.net/images/logo.png">
+		<title>C# Bulk Insert, update, delete and merge in SQL Server, SQL Azure, SQL Compact, MySQL and SQLite</title>
+		<link rel="icon" type="image/png" href="http://bulk-operations.net/images/logo.png">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 		<!-- todo: change me !-->
-		<link rel="stylesheet" type="text/css" href="http://entityframework-plus.net/css/github.css">
+		<link rel="stylesheet" type="text/css" href="http://bulk-operations.net/css/github.css">
 	</head>
 	
 	<body>
@@ -44,12 +44,12 @@ layout: post
 					<div class="col-lg-6">
 						<div class="card">
 							<div class="card-block">
-								<h1 class="card-title">EntityFramework Plus (EF+)</h1>
-								<h3>Entity Framework Bulk Operations & Utilities</h3>
+								<h1 class="card-title">C# Bulk Operations</h1>
+								<h3>Bulk Insert, Update, Delete and Merge</h3>
 								<hr class="m-y-md" />
 								<div class="lead">
-									<a href="https://github.com/zzzprojects/EntityFramework-Plus/wiki/Downloads" target="_blank" class="btn btn-success btn-lg btn-left" role="button"><span><i class="fa fa-cloud-download fa-2x"></i>&nbsp;<span>Download</span></span></a>
-									<a href="https://github.com/zzzprojects/EntityFramework-Plus" target="_blank" class="btn btn-primary btn-lg btn-right" role="button"><span><i class="fa fa-github fa-2x"></i>&nbsp;<span>GitHub</span></span></a>
+									<a href="https://github.com/zzzprojects/Bulk-Operations" target="_blank" class="btn btn-success btn-lg btn-left" role="button"><span><i class="fa fa-cloud-download fa-2x"></i>&nbsp;<span>Download</span></span></a>
+									<a href="https://github.com/zzzprojects/Bulk-Operations" target="_blank" class="btn btn-primary btn-lg btn-right" role="button"><span><i class="fa fa-github fa-2x"></i>&nbsp;<span>GitHub</span></span></a>
 									<p class="text-muted">* FREE Version limited to 50 characters</p>						
 								</div>
 							</div>
@@ -96,268 +96,6 @@ layout: post
 		
 		<!-- features !-->
 		<div id="feature">
-			<!-- feature EF+ Bulk Operations !-->
-			<a id="ef-bulk-operations" href="#"></a>
-			<div class="container">
-				<h3>Bulk Operations</h3>
-				<p>Bulk Operations only available with <a href="http://www.zzzprojects.com/products/dotnet-development/entity-framework-extensions/">Entity Framework Extensions</a></p>
-{% highlight csharp %}
-// Upgrade SaveChanges performance with BulkSaveChanges
-var context = new CustomerContext();
-// ... context code ...
-
-// Easy to use
-context.BulkSaveChanges();
-
-// Easy to customize
-context.BulkSaveChanges(operation => operation.BatchSize = 1000);
-{% endhighlight %}
-
-{% highlight csharp %}
-// Perform specific bulk operations on entities
-context.BulkDelete(customers);
-context.BulkInsert(customers);
-context.BulkUpdate(customers);
-context.BulkMerge(customers);
-{% endhighlight %}
-
-{% highlight csharp %}
-// Use flexible features such as specifying the primary key
-context.BulkMerge(customers, operation => {
-   operation.ColumnPrimaryKeyExpression = customer => customer.Code;
-});
-{% endhighlight %}
-				<a class="btn btn-primary btn-lg" href="http://www.zzzprojects.com/products/dotnet-development/entity-framework-extensions/" role="button" target="_blank">Learn More&nbsp;<i class="fa fa-hand-o-right"></i></a>
-			</div>
-			
-			<!-- feature EF+ Batch Delete !-->
-			<a id="ef-batch-delete" href="#"></a>
-			<div class="container">
-				<h3>Batch Delete</h3>
-				<p class="font-weight-bold">Deletes multiples rows in a single database roundtrip and without loading entities in the context.</p>
-{% highlight csharp %}
-// using Z.EntityFramework.Plus; // Don't forget to include this.
-
-// DELETE all users which has been inactive for 2 years
-ctx.Users.Where(x => x.LastLoginDate < DateTime.Now.AddYears(-2))
-         .Delete();
-
-// DELETE using a BatchSize
-ctx.Users.Where(x => x.LastLoginDate < DateTime.Now.AddYears(-2))
-         .Delete(x => x.BatchSize = 1000);
-{% endhighlight %}
-				<a class="btn btn-primary btn-lg" href="https://github.com/zzzprojects/EntityFramework-Plus/wiki/EF-Batch-Delete-%7C-Entity-Framework-Batch-Delete-Objects-Without-Loading-Them" role="button" target="_blank">Learn More&nbsp;<i class="fa fa-hand-o-right"></i></a>
-			</div>
-			
-			<!-- feature EF+ Batch Update !-->
-			<a id="ef-batch-update" href="#"></a>
-			<div class="container">
-				<h3>Batch Update</h3>
-				<p class="font-weight-bold">Updates multiples rows using an expression in a single database roundtrip and without loading entities in the context.</p>
-{% highlight csharp %}
-// using Z.EntityFramework.Plus; // Don't forget to include this.
-
-// UPDATE all users which has been inactive for 2 years
-ctx.Users.Where(x => x.LastLoginDate < DateTime.Now.AddYears(-2))
-         .Update(x => new User() { IsSoftDeleted = 1 });
-{% endhighlight %}
-				<a class="btn btn-primary btn-lg" href="https://github.com/zzzprojects/EntityFramework-Plus/wiki/EF-Batch-Update-%7C-Entity-Framework-Batch-Update-Objects-Without-Loading-Them" role="button" target="_blank">Learn More&nbsp;<i class="fa fa-hand-o-right"></i></a>
-			</div>
-			
-			<!-- feature EF+ Query Cache !-->
-			<a id="ef-query-cache" href="#"></a>
-			<div class="container">
-				<h3>Query Cache</h3>
-				<p class="font-weight-bold">Query cache is the second level cache for Entity Framework.</p>
-				<p>The result of the query is returned from the cache. If the query is not cached yet, the query is materialized and cached before being returned.</p>
-				<p>You can specify cache policy and cache tag to control CacheItem expiration.</p>
-				<p>Supports:</p>
-				<p class="font-italic">Cache Policy</p>
-{% highlight csharp %}
-// The query is cached using default QueryCacheManager options
-var countries = ctx.Countries.Where(x => x.IsActive).FromCache();
-
-// (EF5 | EF6) The query is cached for 2 hours
-var states = ctx.States.Where(x => x.IsActive).FromCache(DateTime.Now.AddHours(2));
-
-// (EF7) The query is cached for 2 hours without any activity
-var options = new MemoryCacheEntryOptions() { SlidingExpiration = TimeSpan.FromHours(2)};
-var states = ctx.States.Where(x => x.IsActive).FromCache(options);
-{% endhighlight %}
-				<p class="font-italic">Cache Tags</p>
-{% highlight csharp %}
-var states = db.States.Where(x => x.IsActive).FromCache("countries", "states");
-var stateCount = db.States.Where(x => x.IsActive).DeferredCount().FromCache("countries", "states");
-
-// Expire all cache entry using the "countries" tag
-QueryCacheManager.ExpireTag("countries");
-{% endhighlight %}
-				<a class="btn btn-primary btn-lg" href="https://github.com/zzzprojects/EntityFramework-Plus/wiki/EF-Query-Cache-%7C-Entity-Framework-Second-Level-Caching" role="button" target="_blank">Learn More&nbsp;<i class="fa fa-hand-o-right"></i></a>
-			</div>
-			
-			
-		
-			<!-- feature EF+ Query Deferred !-->
-			<a id="ef-query-deferred" href="#"></a>
-			<div class="container">
-				<h3>Query Deferred</h3>
-				<p class="font-weight-bold">Defer the execution of a query which is normally executed to allow some features like Query Cache and Query Future.</p>
-{% highlight csharp %}
-// Oops! The query is already executed, we cannot use Query Cache or Query Future features
-var count = ctx.Customers.Count();
-
-// Query Cache
-ctx.Customers.DeferredCount().FromCache();
-
-// Query Future
-ctx.Customers.DeferredCount().FutureValue();
-{% endhighlight %}
-				<a class="btn btn-primary btn-lg" href="https://github.com/zzzprojects/EntityFramework-Plus/wiki/EF-Query-Deferred-%7C-Entity-Framework-deferring-immediate-LINQ-query-execution" role="button" target="_blank">Learn More&nbsp;<i class="fa fa-hand-o-right"></i></a>
-			</div>
-			
-			<!-- feature EF+ Query Filter !-->
-			<a id="ef-query-filter" href="#"></a>
-			<div class="container">
-				<h3>Query Filter</h3>
-				<p class="font-weight-bold">Filter query with predicate at global, instance or query level.</p>
-				<p>Supports:</p>
-				<p class="font-italic">Global Filter</p>
-{% highlight csharp %}
-// CREATE global filter
-QueryFilterManager.Filter<Customer>(x => x.Where(c => c.IsActive));
-
-var ctx = new EntityContext();
-
-// TIP: Add this line in EntitiesContext constructor instead
-QueryFilterManager.InitilizeGlobalFilter(ctx);
-
-// SELECT * FROM Customer WHERE IsActive = true
-var customer = ctx.Customers.ToList();
-{% endhighlight %}
-				<p class="font-italic">Instance Filter</p>
-{% highlight csharp %}
-var ctx = new EntityContext();
-
-// CREATE filter
-ctx.Filter<Customer>(x => x.Where(c => c.IsActive));
-
-// SELECT * FROM Customer WHERE IsActive = true
-var customer = ctx.Customers.ToList();
-{% endhighlight %}
-				<p class="font-italic">Query Filter</p>
-{% highlight csharp %}
-var ctx = new EntityContext();
-
-// CREATE filter disabled
-ctx.Filter<Customer>(CustomEnum.EnumValue, x => x.Where(c => c.IsActive), false);
-
-// SELECT * FROM Customer WHERE IsActive = true
-var customer = ctx.Customers.Filter(CustomEnum.EnumValue).ToList();
-{% endhighlight %}
-				<a class="btn btn-primary btn-lg" href="https://github.com/zzzprojects/EntityFramework-Plus/wiki/EF-Query-Filter-%7C-Entity-Framework-Dynamic-Instance-and-Global-Filters" role="button" target="_blank">Learn More&nbsp;<i class="fa fa-hand-o-right"></i></a>
-			</div>
-			
-			<!-- feature EF+ Query Future !-->
-			<a id="ef-query-future" href="#"></a>
-			<div class="container">
-				<h3>Query Future</h3>
-				<p class="font-weight-bold">Query Future allow to reduce database roundtrip by batching multiple queries in the same sql command.</p>
-				<p>All future query are stored in a pending list. When the first future query require a database roundtrip, all query are resolved in the same sql command instead of making a database roundtrip for every sql command.</p>
-				<p>Supports:</p>
-				<p class="font-italic">Future</p>
-{% highlight csharp %}
-// GET the states & countries list
-var futureCountries = db.Countries.Where(x => x.IsActive).Future();
-var futureStates = db.States.Where(x => x.IsActive).Future();
-
-// TRIGGER all pending queries (futureCountries & futureStates)
-var countries = futureCountries.ToList();
-{% endhighlight %}
-				<p class="font-italic">FutureValue</p>
-{% highlight csharp %}
-// GET the first active customer and the number of avtive customers
-var futureFirstCustomer = db.Customers.Where(x => x.IsActive).DeferredFirstOrDefault().FutureValue();
-var futureCustomerCount = db.Customers.Where(x => x.IsActive).DeferredCount().FutureValue();
-
-// TRIGGER all pending queries (futureFirstCustomer & futureCustomerCount)
-Customer firstCustomer = futureFirstCustomer.Value;
-{% endhighlight %}
-				<a class="btn btn-primary btn-lg" href="https://github.com/zzzprojects/EntityFramework-Plus/wiki/EF-Query-Future-%7C-Entity-Framework-Combine-and-Execute-Multiple-SQL-Command" role="button" target="_blank">Learn More&nbsp;<i class="fa fa-hand-o-right"></i></a>
-			</div>
-			
-			<!-- feature EF+ Query IncludeFilter !-->
-			<a id="ef-query-includefilter" href="#"></a>
-			<div class="container">
-				<h3>Query IncludeFilter</h3>
-				<p>Entity Framework already support eager loading however the major drawback is you cannot control what will be included. There is no way to load only active item or load only the first 10 comments.</p>
-				<p><b>EF+ Query Include</b> make it easy:</p>
-{% highlight csharp %}
-var ctx = new EntityContext();
-
-// Load only active comments
-var posts = ctx.Post.IncludeFilter(x => x.Comments.Where(x => x.IsActive));
-{% endhighlight %}
-				<a class="btn btn-primary btn-lg" href="https://github.com/zzzprojects/EntityFramework-Plus/wiki/EF-Query-IncludeFilter-%7C-Entity-Framework-Include-Related-Entities-using-Where-Filter" role="button" target="_blank">Learn More&nbsp;<i class="fa fa-hand-o-right"></i></a>
-			</div>
-			
-			<!-- feature EF+ Query IncludeOptimized !-->
-			<a id="ef-query-includeoptimized" href="#"></a>
-			<div class="container">
-				<h3>Query IncludeOptimized</h3>
-				<p>Improve SQL generate by Include and filter child collections at the same times!</p>
-{% highlight csharp %}
-var ctx = new EntityContext();
-
-// Load only active comments using an optimized include
-var posts = ctx.Post.IncludeOptimized(x => x.Comments.Where(x => x.IsActive));
-{% endhighlight %}
-				<a class="btn btn-primary btn-lg" href="https://github.com/zzzprojects/EntityFramework-Plus/wiki/EF-Query-IncludeFilter-%7C-Entity-Framework-Include-Related-Entities-using-Where-Filter" role="button" target="_blank">Learn More&nbsp;<i class="fa fa-hand-o-right"></i></a>
-			</div>
-			
-			<!-- feature EF+ Audit !-->
-			<a id="ef-audit" href="#"></a>
-			<div class="container">
-				<h3>Audit</h3>
-				<p>Allow to easily track changes, exclude/include entity or property and auto save audit entries in the database.</p>
-				<p>
-					<b>Support:</b>
-					<ul>
-						<li>AutoSave Audit</li>
-						<li>Exclude & Include Entity</li>
-						<li>Exclude & Include Property</li>
-						<li>Format Value</li>
-						<li>Ignore Events</li>
-						<li>Property Unchanged</li>
-						<li>Soft Add & Soft Delete</li>
-					</ul>
-				</p>
-{% highlight csharp %}
-// using Z.EntityFramework.Plus; // Don't forget to include this.
-
-var ctx = new EntityContext();
-// ... ctx changes ...
-
-var audit = new Audit();
-audit.CreatedBy = "ZZZ Projects"; // Optional
-ctx.SaveChanges(audit);
-
-// Access to all auditing information
-var entries = audit.Entries;
-foreach(var entry in entries)
-{
-    foreach(var property in entry.Properties)
-    {
-    }
-}
-{% endhighlight %}
-
-				<p class="font-italic">AutoSave audit in your database</p>
-{% highlight csharp %}
-AuditManager.DefaultConfiguration.AutoSavePreAction = (context, audit) =>
-    (context as EntityContext).AuditEntries.AddRange(audit.Entries);
-{% endhighlight %}
-				<a class="btn btn-primary btn-lg" href="https://github.com/zzzprojects/EntityFramework-Plus/wiki/EF-Audit-%7C-Entity-Framework-Audit-Trail-Context-and-Track-Changes" role="button" target="_blank">Learn More&nbsp;<i class="fa fa-hand-o-right"></i></a>
-			</div>
 		</div>
 		
 		<!-- anchor !-->
@@ -381,79 +119,32 @@ AuditManager.DefaultConfiguration.AutoSavePreAction = (context, audit) =>
 							<thead class="thead-inverse">
 								<tr>
 									<th></th>
-									<th>FREE</th>
 									<th>PRO</th>
 								</tr>
 							</thead>
 							<tbody>
 								<tr>
-									<th>Bulk SaveChanges</th>
-									<td><i class="fa fa-times fa-2x"></i></td>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
 									<th>Bulk Insert</th>
-									<td><i class="fa fa-times fa-2x"></i></td>
 									<td><i class="fa fa-check-square-o fa-2x"></i></td>
 								</tr>
 								<tr>
 									<th>Bulk Update</th>
-									<td><i class="fa fa-times fa-2x"></i></td>
 									<td><i class="fa fa-check-square-o fa-2x"></i></td>
 								</tr>
 								<tr>
 									<th>Bulk Delete</th>
-									<td><i class="fa fa-times fa-2x"></i></td>
 									<td><i class="fa fa-check-square-o fa-2x"></i></td>
 								</tr>
 								<tr>
 									<th>Bulk Merge</th>
-									<td><i class="fa fa-times fa-2x"></i></td>
 									<td><i class="fa fa-check-square-o fa-2x"></i></td>
 								</tr>
 								<tr>
-									<th>Audit</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>Batch Delete</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
+									<th>DeleteFromQuery</th>
 									<td><i class="fa fa-check-square-o fa-2x"></i></td>
 								</tr>
 								<tr>
-									<th>Batch Update</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>Query Cache</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-							    <tr>
-									<th>Query Deferred</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>Query Filter</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>Query Future</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>Query IncludeFilter</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>Query IncludeOptimized</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
+									<th>UpdateFromQuery</th>
 									<td><i class="fa fa-check-square-o fa-2x"></i></td>
 								</tr>
 								<tr>
@@ -530,10 +221,10 @@ AuditManager.DefaultConfiguration.AutoSavePreAction = (context, audit) =>
 							<div class="card-block">
 								<h4 class="card-title">Documentation</h4>
 							</div>
-							<a href="https://github.com/zzzprojects/EntityFramework-Plus/wiki" target="_blank"><i class="fa fa-folder-open fa-5x"></i></a>
+							<a href="https://github.com/zzzprojects/Bulk-Operations.NET/wiki" target="_blank"><i class="fa fa-folder-open fa-5x"></i></a>
 							<div class="card-block">
 								<p class="card-text">Consult our complete documentation to help you getting started.</p>
-								<a href="https://github.com/zzzprojects/EntityFramework-Plus/wiki" target="_blank">Documentation</a>
+								<a href="https://github.com/zzzprojects/Bulk-Operations.NET/wiki" target="_blank">Documentation</a>
 							</div>
 						</div>
 					</div>
@@ -556,10 +247,10 @@ AuditManager.DefaultConfiguration.AutoSavePreAction = (context, audit) =>
 							<div class="card-block">
 								<h4 class="card-title">Forum</h4>
 							</div>
-							<a href="https://github.com/zzzprojects/EntityFramework-Plus/issues" target="_blank"><i class="fa fa-weixin fa-5x"></i></a>
+							<a href="https://github.com/zzzprojects/Bulk-Operations.NET/issues" target="_blank"><i class="fa fa-weixin fa-5x"></i></a>
 							<div class="card-block">
 								<p class="card-text">Visit the forum to propose new features or to discuss about the library.</p>
-								<a href="https://github.com/zzzprojects/EntityFramework-Plus/issues" target="_blank">Forum</a>
+								<a href="https://github.com/zzzprojects/Bulk-Operations.NET/issues" target="_blank">Forum</a>
 							</div>
 						</div>
 					</div>
@@ -569,10 +260,10 @@ AuditManager.DefaultConfiguration.AutoSavePreAction = (context, audit) =>
 							<div class="card-block">
 								<h4 class="card-title">Open Source</h4>
 							</div>
-							<a href="https://github.com/zzzprojects/EntityFramework-Plus" target="_blank"><i class="fa fa-github fa-5x"></i></a>
+							<a href="https://github.com/zzzprojects/Bulk-Operations.NET" target="_blank"><i class="fa fa-github fa-5x"></i></a>
 							<div class="card-block">
 								<p class="card-text">Access the source of the library you're using to understand better its logic.</p>
-								<a href="https://github.com/zzzprojects/EntityFramework-Plus" target="_blank">GitHub</a>
+								<a href="https://github.com/zzzprojects/Bulk-Operations.NET" target="_blank">GitHub</a>
 							</div>
 						</div>
 					</div>
