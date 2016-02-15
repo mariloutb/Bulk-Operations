@@ -88,21 +88,22 @@ bulk.BulkMerge(customers);
 		
 		<!-- features !-->
 		<div id="feature">
-			<h2>What's C# Bulk Operations?</h2>
-			The library offers high performance operations such as Bulk Insert, Update, Delete and Merge in a database.
+			<div class="container">
+				<h2>What's C# Bulk Operations?</h2>
+				The library offers high performance operations such as Bulk Insert, Update, Delete and Merge in a database.
 
-			<h3>Who Need It?</h3>
+				<h3>Who Need It?</h3>
 
-			Anyone who need to perform an operation in the database on multiple rows fast and efficiently.
+				Anyone who need to perform an operation in the database on multiple rows fast and efficiently.
 
-			<h3> Supported Data Source</h3>
-			<ul>
-				<li>Entity</li>
-				<li>DataTable</li>
-				<li>DataRow</li>
-				<li>DataReader</li>
-				<li>Expando Object</li>
-			</ul>
+				<h3> Supported Data Source</h3>
+				<ul>
+					<li>Entity</li>
+					<li>DataTable</li>
+					<li>DataRow</li>
+					<li>DataReader</li>
+					<li>Expando Object</li>
+				</ul>
 {% highlight csharp %}
 var bulk = new BulkOperation<Customer>(connection);
 bulk.BulkInsert(customers); // Entity
@@ -112,18 +113,19 @@ bulk.BulkInsert(reader); // DataReader
 bulk.BulkInsert(expando); // ExpandoObject
 {% endhighlight %}	
 
-			<h3> Supported Provider</h3>
-			<ul>
-				<li>SQL Server 2008+</li>
-				<li>SQL Azure</li>
-				<li>SQL Compact</li>
-				<li>MySQL</li>
-				<li>SQLite</li>
-			</ul>
+				<h3> Supported Provider</h3>
+				<ul>
+					<li>SQL Server 2008+</li>
+					<li>SQL Azure</li>
+					<li>SQL Compact</li>
+					<li>MySQL</li>
+					<li>SQLite</li>
+				</ul>
 {% highlight csharp %}
 // One class for all providers!
 var bulk = new BulkOperation(connection);
 {% endhighlight %}	
+			</div>
 		</div>
 		
 		<!-- anchor !-->
