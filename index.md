@@ -389,7 +389,7 @@ var bulk = new BulkOperation(connection);
 	  
 	  $("#bundle_product").hide();
 	  function selectProduct() {
-		if($("#provider_type").value == 4) {
+		if($("#provider_type").val() == "YZLDF7MB7S66Q") {
 			$("#single_product").hide();
 			$("#bundle_product").show();
 		}
