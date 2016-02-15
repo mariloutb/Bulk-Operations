@@ -92,7 +92,7 @@ bulk.BulkMerge(customers);
 				<h2>What's C# Bulk Operations?</h2>
 				The library offers high performance operations such as Bulk Insert, Update, Delete and Merge in a database.
 
-				<h3>Who Need It?</h3>
+				<b>Who Need It?</b>
 
 				Anyone who need to perform an operation in the database on multiple rows fast and efficiently.
 
