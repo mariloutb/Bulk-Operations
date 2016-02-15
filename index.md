@@ -202,6 +202,7 @@ var bulk = new BulkOperation(connection);
 									<option value="VEN7DRSDH74YQ">MySQL Provider</option>
 									<option value="YZLDF7MB7S66Q">ALL Providers</option>
 								</select> 
+								<br />
 								<select name="os0" class="form-control">
 									<option value="1 seat">Bulk Operations $599 (1 seat)</option>
 									<option value="2-4 seats" selected>Bulk Operations $799 (2-4 seats)</option>
