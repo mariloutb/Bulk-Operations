@@ -48,7 +48,7 @@ layout: post
 								<h3>Bulk Insert, Update, Delete and Merge</h3>
 								<hr class="m-y-md" />
 								<div class="lead">
-									<a href="https://github.com/zzzprojects/Bulk-Operations" target="_blank" class="btn btn-success btn-lg btn-left" role="button"><span><i class="fa fa-cloud-download fa-2x"></i>&nbsp;<span>Download</span></span></a>
+									<a href="http://www.zzzprojects.com/products/" target="_blank" class="btn btn-success btn-lg btn-left" role="button"><span><i class="fa fa-cloud-download fa-2x"></i>&nbsp;<span>Download</span></span></a>
 									<a href="https://github.com/zzzprojects/Bulk-Operations" target="_blank" class="btn btn-primary btn-lg btn-right" role="button"><span><i class="fa fa-github fa-2x"></i>&nbsp;<span>GitHub</span></span></a>				
 								</div>
 							</div>
