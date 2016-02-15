@@ -387,8 +387,16 @@ var bulk = new BulkOperation(connection);
 		return false;
 	  }
 	  
+	  $("#bundle_product").hide();
 	  function selectProduct() {
-		alert('a');
+		if($("#provider_type").value == 4) {
+			$("#single_product").hide();
+			$("#bundle_product").show();
+		}
+		else {
+			$("#single_product").show();
+			$("#bundle_product").hide();
+		}
 	  }
 	</script>
 	</body>
