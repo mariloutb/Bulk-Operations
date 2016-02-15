@@ -68,9 +68,7 @@ bulk.BulkInsert(dt);
 bulk.BulkUpdate(dt);
 bulk.BulkDelete(dt);
 bulk.BulkMerge(dt);
-{% endhighlight %}	
 
-{% highlight csharp %}
 // Support Generic Type && Lambda Expressions
 var bulk = new BulkOperation<Customer>(connection);
 bulk.ColumnInputExpression = c => new { c.Name,  c.FirstName };
@@ -90,60 +88,42 @@ bulk.BulkMerge(customers);
 		
 		<!-- features !-->
 		<div id="feature">
-## What's C# Bulk Operations?
-The library offers high performance operations such as Bulk Insert, Update, Delete and Merge in a database.
+			<h2>What's C# Bulk Operations?</h2>
+			The library offers high performance operations such as Bulk Insert, Update, Delete and Merge in a database.
 
-**Who Need It?**
+			<h3>Who Need It?</h3>
 
-Anyone who need to perform an operation in the database on multiple rows fast and efficiently.
+			Anyone who need to perform an operation in the database on multiple rows fast and efficiently.
 
-```csharp
-// Support all type of operations && AutoMapping
-var bulk = new BulkOperation(connection);
-
-bulk.BulkInsert(dt);
-bulk.BulkUpdate(dt);
-bulk.BulkDelete(dt);
-bulk.BulkMerge(dt);
-```
-
-```csharp
-// Support Generic Type && Lambda Expressions
-var bulk = new BulkOperation<Customer>(connection);
-bulk.ColumnInputExpression = c => new { c.Name,  c.FirstName };
-bulk.ColumnOutputExpression = c => c.CustomerID;
-bulk.ColumnPrimaryKeyExpression = c => c.Code;
-bulk.BulkMerge(customers);
-```
-
-## Supported Data Source
-- Entity
-- DataTable
-- DataRow
-- DataReader
-- Expando Object
-
-```csharp
+			<h3> Supported Data Source</h3>
+			<ul>
+				<li>Entity</li>
+				<li>DataTable</li>
+				<li>DataRow</li>
+				<li>DataReader</li>
+				<li>Expando Object</li>
+			</ul>
+{% highlight csharp %}
 var bulk = new BulkOperation<Customer>(connection);
 bulk.BulkInsert(customers); // Entity
 bulk.BulkInsert(dt); // DataTable
 bulk.BulkInsert(dr); // DataRow
 bulk.BulkInsert(reader); // DataReader
 bulk.BulkInsert(expando); // ExpandoObject
-```
+{% endhighlight %}	
 
-## Supported Provider
-- SQL Server 2008+
-- SQL Azure
-- SQL Compact
-- MySQL
-- SQLite
-
-```csharp
+			<h3> Supported Provider</h3>
+			<ul>
+				<li>SQL Server 2008+</li>
+				<li>SQL Azure</li>
+				<li>SQL Compact</li>
+				<li>MySQL</li>
+				<li>SQLite</li>
+			</ul>
+{% highlight csharp %}
 // One class for all providers!
 var bulk = new BulkOperation(connection);
-```
-
+{% endhighlight %}	
 		</div>
 		
 		<!-- anchor !-->
