@@ -192,16 +192,22 @@ var bulk = new BulkOperation(connection);
 						
 						<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" onsubmit="return purchase_validate()">
 							<input type="hidden" name="cmd" value="_s-xclick">
-							<input type="hidden" name="hosted_button_id" value="GY8E58XJPDGLW">
 							<input type="hidden" name="currency_code" value="USD">
 							<fieldset class="form-group">
 								<input type="hidden" name="on0" value="Seats">
+								<select name="hosted_button_id" class="form-control">
+									<option value="P4LJES7RRRMRE">SQL Server/ Azure Provider</option>
+									<option value="VL4K5FXSRWV88">SQL Compact Provider</option>
+									<option value="MVSYAVJHUY9DS">SQLite Provider</option>
+									<option value="VEN7DRSDH74YQ">MySQL Provider</option>
+									<option value="YZLDF7MB7S66Q">ALL Providers</option>
+								</select> 
 								<select name="os0" class="form-control">
-									<option value="1 seat">EntityFramework Plus $599 (1 seat)</option>
-									<option value="2-4 seats" selected>EntityFramework Plus $799 (2-4 seats)</option>
-									<option value="5-9 seats">EntityFramework Plus $999 (5-9 seats)</option>
-									<option value="10-14 seats">EntityFramework Plus $1199 (10-14 seats)</option>
-									<option value="15-19 seats">EntityFramework Plus $1399 (15-19 seats)</option>
+									<option value="1 seat">Bulk Operations $599 (1 seat)</option>
+									<option value="2-4 seats" selected>Bulk Operations $799 (2-4 seats)</option>
+									<option value="5-9 seats">Bulk Operations $999 (5-9 seats)</option>
+									<option value="10-14 seats">Bulk Operations $1199 (10-14 seats)</option>
+									<option value="15-19 seats">Bulk Operations $1399 (15-19 seats)</option>
 								</select> 
 							</fieldset>
 							<div class="checkbox">
