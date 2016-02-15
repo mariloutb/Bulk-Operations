@@ -195,7 +195,7 @@ var bulk = new BulkOperation(connection);
 							<input type="hidden" name="currency_code" value="USD">
 							<fieldset class="form-group">
 								<input type="hidden" name="on0" value="Seats">
-								<select name="hosted_button_id" class="form-control">
+								<select name="hosted_button_id" class="form-control" onchange="selectProduct()">
 									<option value="P4LJES7RRRMRE">SQL Server/ Azure Provider</option>
 									<option value="VL4K5FXSRWV88">SQL Compact Provider</option>
 									<option value="MVSYAVJHUY9DS">SQLite Provider</option>
@@ -203,12 +203,19 @@ var bulk = new BulkOperation(connection);
 									<option value="YZLDF7MB7S66Q">ALL Providers</option>
 								</select> 
 								<br />
-								<select name="os0" class="form-control">
+								<select id="single_product" name="os0" class="form-control">
 									<option value="1 seat">Bulk Operations $599 (1 seat)</option>
 									<option value="2-4 seats" selected>Bulk Operations $799 (2-4 seats)</option>
 									<option value="5-9 seats">Bulk Operations $999 (5-9 seats)</option>
 									<option value="10-14 seats">Bulk Operations $1199 (10-14 seats)</option>
 									<option value="15-19 seats">Bulk Operations $1399 (15-19 seats)</option>
+								</select> 
+								<select id="bundle_product" name="os0" class="form-control">
+									<option value="1 seat">Bulk Operations $799 (1 seat)</option>
+									<option value="2-4 seats" selected>Bulk Operations $999 (2-4 seats)</option>
+									<option value="5-9 seats">Bulk Operations $1199 (5-9 seats)</option>
+									<option value="10-14 seats">Bulk Operations $1399 (10-14 seats)</option>
+									<option value="15-19 seats">Bulk Operations $1599 (15-19 seats)</option>
 								</select> 
 							</fieldset>
 							<div class="checkbox">
@@ -378,6 +385,10 @@ var bulk = new BulkOperation(connection);
 		
 		$("#error_validation").modal('show')
 		return false;
+	  }
+	  
+	  function selectProduct() {
+		alert('a');
 	  }
 	</script>
 	</body>
