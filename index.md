@@ -57,33 +57,27 @@ layout: post
 					</div>
 					<div class="col-lg-1">
 					</div>
-					<div class="col-lg-5">
+					<div class="col-lg-6">
 						<div class="card">
-							<div class="card-block card-contents" style="padding-left: 20px;">
-								<b>Bulk Operations</b>
-								<ul>
-									<li><a href="#ef-bulk-operations">Bulk SaveChanges</a></li>
-									<li><a href="#ef-bulk-operations">Bulk Insert</a></li>
-									<li><a href="#ef-bulk-operations">Bulk Update</a></li>
-									<li><a href="#ef-bulk-operations">Bulk Delete</a></li>
-									<li><a href="#ef-bulk-operations">Bulk Merge</a></li>
-								</ul>
-								<b>Batch Operations</b>
-								<ul>
-									<li><a href="#ef-batch-delete">Batch Delete</a></li>
-									<li><a href="#ef-batch-update">Batch Update</a></li>
-								</ul>
-								<b>Query</b>
-								<ul>
-									<li><a href="#ef-query-cache">Query Cache</a></li>
-									<li><a href="#ef-query-deferred">Query Deferred</a></li>
-									<li><a href="#ef-query-filter">Query Filter</a></li>
-									<li><a href="#ef-query-future">Query Future</a></li>
-									<li><a href="#ef-query-includefilter">Query IncludeFilter</a></li>
-									<li><a href="#ef-query-includeoptimized">Query IncludeOptimized</a></li>
-								</ul>
-								<a href="#ef-audit">Audit</a>
-								</ul>
+							<div class="card-block card-code">
+{% highlight csharp %}
+// Support all type of operations && AutoMapping
+var bulk = new BulkOperation(connection);
+
+bulk.BulkInsert(dt);
+bulk.BulkUpdate(dt);
+bulk.BulkDelete(dt);
+bulk.BulkMerge(dt);
+{% endhighlight %}	
+
+{% highlight csharp %}
+// Support Generic Type && Lambda Expressions
+var bulk = new BulkOperation<Customer>(connection);
+bulk.ColumnInputExpression = c => new { c.Name,  c.FirstName };
+bulk.ColumnOutputExpression = c => c.CustomerID;
+bulk.ColumnPrimaryKeyExpression = c => c.Code;
+bulk.BulkMerge(customers);
+{% endhighlight %}	
 							</div>
 						</div>
 					</div>
@@ -96,6 +90,60 @@ layout: post
 		
 		<!-- features !-->
 		<div id="feature">
+## What's C# Bulk Operations?
+The library offers high performance operations such as Bulk Insert, Update, Delete and Merge in a database.
+
+**Who Need It?**
+
+Anyone who need to perform an operation in the database on multiple rows fast and efficiently.
+
+```csharp
+// Support all type of operations && AutoMapping
+var bulk = new BulkOperation(connection);
+
+bulk.BulkInsert(dt);
+bulk.BulkUpdate(dt);
+bulk.BulkDelete(dt);
+bulk.BulkMerge(dt);
+```
+
+```csharp
+// Support Generic Type && Lambda Expressions
+var bulk = new BulkOperation<Customer>(connection);
+bulk.ColumnInputExpression = c => new { c.Name,  c.FirstName };
+bulk.ColumnOutputExpression = c => c.CustomerID;
+bulk.ColumnPrimaryKeyExpression = c => c.Code;
+bulk.BulkMerge(customers);
+```
+
+## Supported Data Source
+- Entity
+- DataTable
+- DataRow
+- DataReader
+- Expando Object
+
+```csharp
+var bulk = new BulkOperation<Customer>(connection);
+bulk.BulkInsert(customers); // Entity
+bulk.BulkInsert(dt); // DataTable
+bulk.BulkInsert(dr); // DataRow
+bulk.BulkInsert(reader); // DataReader
+bulk.BulkInsert(expando); // ExpandoObject
+```
+
+## Supported Provider
+- SQL Server 2008+
+- SQL Azure
+- SQL Compact
+- MySQL
+- SQLite
+
+```csharp
+// One class for all providers!
+var bulk = new BulkOperation(connection);
+```
+
 		</div>
 		
 		<!-- anchor !-->
