@@ -291,19 +291,12 @@ bulk.BulkMerge(dt);
 									<option value="YZLDF7MB7S66Q">ALL Providers</option>
 								</select> 
 								<br />
-								<select id="single_product" name="os0" class="form-control">
-									<option value="1 seat">Bulk Operations $599 (1 seat)</option>
-									<option value="2-4 seats" selected>Bulk Operations $799 (2-4 seats)</option>
-									<option value="5-9 seats">Bulk Operations $999 (5-9 seats)</option>
-									<option value="10-14 seats">Bulk Operations $1199 (10-14 seats)</option>
-									<option value="15-19 seats">Bulk Operations $1399 (15-19 seats)</option>
-								</select> 
-								<select id="bundle_product" name="os0" class="form-control">
-									<option value="1 seat">Bulk Operations $799 (1 seat)</option>
-									<option value="2-4 seats" selected>Bulk Operations $999 (2-4 seats)</option>
-									<option value="5-9 seats">Bulk Operations $1199 (5-9 seats)</option>
-									<option value="10-14 seats">Bulk Operations $1399 (10-14 seats)</option>
-									<option value="15-19 seats">Bulk Operations $1599 (15-19 seats)</option>
+								<select id="product_option" name="os0" class="form-control">
+									<option id="seat1" value="1 seat">Bulk Operations $599 (1 seat)</option>
+									<option id="seat2_4" value="2-4 seats" selected>Bulk Operations $799 (2-4 seats)</option>
+									<option id="seat5_9" value="5-9 seats">Bulk Operations $999 (5-9 seats)</option>
+									<option id="seat10_14" value="10-14 seats">Bulk Operations $1199 (10-14 seats)</option>
+									<option id="seat15_19" value="15-19 seats">Bulk Operations $1399 (15-19 seats)</option>
 								</select> 
 							</fieldset>
 							<div class="checkbox">
@@ -479,12 +472,18 @@ bulk.BulkMerge(dt);
 	  $("#bundle_product").hide();
 	  function selectProduct() {
 		if($("#provider_type").val() == "YZLDF7MB7S66Q") {
-			$("#single_product").hide();
-			$("#bundle_product").show();
+			$("#seat1").html("$799 (1 seat)");
+			$("#seat2_4").html("$999 (2-4 seats)");
+			$("#seat5_9").html("$1199 (5-9 seats)");
+			$("#seat10_14").html("$1399 (10-14 seats)");
+			$("#seat15_19").html("$1599 (15-19 seats)");
 		}
 		else {
-			$("#single_product").show();
-			$("#bundle_product").hide();
+			$("#seat1").html("$599 (1 seat)");
+			$("#seat2_4").html("$799 (2-4 seats)");
+			$("#seat5_9").html("$999 (5-9 seats)");
+			$("#seat10_14").html("$1199 (10-14 seats)");
+			$("#seat15_19").html("$1399 (15-19 seats)");
 		}
 	  }
 	</script>
