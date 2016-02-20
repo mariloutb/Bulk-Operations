@@ -472,18 +472,18 @@ bulk.BulkMerge(dt);
 	  $("#bundle_product").hide();
 	  function selectProduct() {
 		if($("#provider_type").val() == "YZLDF7MB7S66Q") {
-			$("#seat1").html("$799 (1 seat)");
-			$("#seat2_4").html("$999 (2-4 seats)");
-			$("#seat5_9").html("$1199 (5-9 seats)");
-			$("#seat10_14").html("$1399 (10-14 seats)");
-			$("#seat15_19").html("$1599 (15-19 seats)");
+			$("#seat1").html("Bulk Operations $799 (1 seat)");
+			$("#seat2_4").html("Bulk Operations $999 (2-4 seats)");
+			$("#seat5_9").html("Bulk Operations $1199 (5-9 seats)");
+			$("#seat10_14").html("Bulk Operations $1399 (10-14 seats)");
+			$("#seat15_19").html("Bulk Operations $1599 (15-19 seats)");
 		}
 		else {
-			$("#seat1").html("$599 (1 seat)");
-			$("#seat2_4").html("$799 (2-4 seats)");
-			$("#seat5_9").html("$999 (5-9 seats)");
-			$("#seat10_14").html("$1199 (10-14 seats)");
-			$("#seat15_19").html("$1399 (15-19 seats)");
+			$("#seat1").html("Bulk Operations $599 (1 seat)");
+			$("#seat2_4").html("Bulk Operations $799 (2-4 seats)");
+			$("#seat5_9").html("Bulk Operations $999 (5-9 seats)");
+			$("#seat10_14").html("Bulk Operations $1199 (10-14 seats)");
+			$("#seat15_19").html("Bulk Operations $1399 (15-19 seats)");
 		}
 	  }
 	</script>
