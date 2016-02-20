@@ -39,46 +39,7 @@ layout: post
 		
 		<!-- header !-->
 		<header>
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-6">
-						<div class="card">
-							<div class="card-block">
-								<h1 class="card-title">C# Bulk Operations</h1>
-								<h3>High performance C# Bulk Operations in SQL with hundreds of flexible features missing from SqlBulkCopy.</h3>
-								<hr class="m-y-md" />
-								<div class="lead">
-									<a href="https://www.nuget.org/packages/Z.BulkOperations/" target="_blank" class="btn btn-success btn-lg btn-left" role="button"><span><i class="fa fa-cloud-download fa-2x"></i>&nbsp;<span>Download</span></span></a>
-									<a href="https://github.com/zzzprojects/Bulk-Operations" target="_blank" class="btn btn-primary btn-lg btn-right" role="button"><span><i class="fa fa-github fa-2x"></i>&nbsp;<span>GitHub</span></span></a>				
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-1">
-					</div>
-					<div class="col-lg-6">
-						<div class="card">
-							<div class="card-block card-code">
-{% highlight csharp %}
-// Support all type of operations
-var bulk = new BulkOperation(connection);
-bulk.BulkInsert(dt);
-bulk.BulkUpdate(dt);
-bulk.BulkDelete(dt);
-bulk.BulkMerge(dt);
 
-// Support Entity / Lambda Mapping
-var bulk = new BulkOperation<Customer>(connection);
-bulk.ColumnInputExpression = c => new { c.Name,  c.FirstName };
-bulk.ColumnOutputExpression = c => c.CustomerID;
-bulk.ColumnPrimaryKeyExpression = c => c.Code;
-bulk.BulkMerge(customers);
-{% endhighlight %}	
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
 		</header>
 		
 		<!-- anchor !-->
