@@ -88,119 +88,7 @@ bulk.BulkMerge(customers);
 		<div id="feature">
 			<div class="container">
 			
-				<!-- Scalable !-->
-				<h2>Scalable</h2>
-				<p>SQL Server - Benchmarks</p>
-				<table class="table table-striped table-hover" style="background-color: white;">
-					<tr class="thead-inverse">
-						<th>Operations</th>
-						<th>1,000 Rows</th>
-						<th>10,000 Rows</th>
-						<th>100,000 Rows</th>
-						<th>1,000,000 Rows</th>
-					</tr>
-					<tr>
-						<th>Insert</th>
-						<td>6 ms</td>
-						<td>25 ms</td>
-						<td>200 ms</td>
-						<td>2,000 ms</td>
-					</tr>
-					<tr>
-						<th>Update</th>
-						<td>50 ms</td>
-						<td>80 ms</td>
-						<td>575 ms</td>
-						<td>6,500 ms</td>
-					</tr>
-					<tr>
-						<th>Delete</th>
-						<td>45 ms</td>
-						<td>70 ms</td>
-						<td>625 ms</td>
-						<td>6,800 ms</td>
-					</tr>
-					<tr>
-						<th>Merge</th>
-						<td>65 ms</td>
-						<td>160 ms</td>
-						<td>1,200 ms</td>
-						<td>12,000 ms</td>
-					</tr>
-				</table>
-				<p class="font-italic">As fast as SqlBulkCopy for insert but with way more capabilities</p>
-
-				<!-- Extensible !-->
-				<h2>Extensible</h2>
-				<p>Support Multiple SQL Providers:</p>
-				<ul>
-					<li>SQL Server 2008+</li>
-					<li>SQL Azure</li>
-					<li>SQL Compact</li>
-					<li>MySQL</li>
-					<li>SQLite</li>
-				</ul>
-
-				<p>Support Multiple DataSources:</p>
-				<ul>
-					<li>Entity</li>
-					<li>DataTable</li>
-					<li>DataRow</li>
-					<li>DataReader</li>
-					<li>DataSet</li>
-					<li>Expando Object</li>
-				</ul>
 				
-				<!-- Insert - Output Identity Value !-->
-				<h2>Insert - Output Identity Value</h2>
-				<h3>Problem</h3>
-				<p>You need to output newly generated identity value but SqlBulkCopy do not support it.</p>
-				<h3>Solution</h3>
-				<p>Map your identity column with output direction.</p>
-{% highlight csharp %}
-var bulk = new BulkOperation(connection);
-
-bulk.ColumnMappings.Add("CustomerID", ColumnMappingDirectionType.Output);
-// ... mappings ...
-
-bulk.BulkInsert(dt);
-{% endhighlight %}	
-				<h3>Flexibility</h3>
-				<p>You can also output concurrency column (Timestamp) or any other column values. All kind of mapping direction are supported including "Formula" to use with a SQL Formula.</p>
-				
-				<!-- Entity DataSource / Lambda Mapping !-->
-				<h2>Entity DataSource / Lambda Mapping</h2>
-				<h3>Problem</h3>
-				<p>You have a list of entity to insert but SqlBulkCopy doesn't support entity and lambda expression mapping.</p>
-				<h3>Solution</h3>
-				<p>Create a generic bulk operations with your entity type and use lambda expression for your column input, output and primary key mapping.</p>
-{% highlight csharp %}
-var bulk = new BulkOperation<Customer>(connection);
-
-bulk.ColumnInputExpression = c => new { c.Name,  c.FirstName };
-bulk.ColumnOutputExpression = c => c.CustomerID;
-bulk.ColumnPrimaryKeyExpression = c => c.Code;
-
-bulk.BulkMerge(customers);
-{% endhighlight %}	
-				<h3>Maintainability</h3>
-				<p>Get rid of hardcoded string and use strongly-typed lambda expressions.</p>
-				
-				<!-- AutoMapping & Case Sensitivity !-->
-				<h2>AutoMapping & Case Sensitivity</h2>
-				<h3>Problem</h3>
-				<p>You have a DataTable which columns name match name in the database but SqlBulkCopy throw an error because name match are case insensitive.</p>
-				<h3>Solution</h3>
-				<p>Turn off case sensitivity with <b>IsCaseSensitive</b> property.</p>
-{% highlight csharp %}
-var bulk = new BulkOperation(connection);
-
-bulk.IsCaseSensitive = false;
-
-bulk.BulkMerge(dt);
-{% endhighlight %}	
-				<h3>Readability</h3>
-				<p>Remove useless code which would have required to create your own mapping and keep the essentials.</p>
 			</div>
 		</div>
 		
@@ -308,11 +196,11 @@ bulk.BulkMerge(dt);
 								</label>
 							</div>
 							<button type="submit" class="btn btn-success btn-lg"><span><i class="fa fa-shopping-cart"></i>&nbsp;<span>BUY NOW</span></span></button>
-							<div><br />* Contact us for invoice or payment method alternative.</div>
+							<br />
+							<div>* Contact us for invoice or payment method alternative.</div>
 						</form>					
 					</div>
 				</div>
-			<!-- this one? !-->
 			</div>
 			
 			<!-- validation !-->
