@@ -469,7 +469,6 @@ bulk.BulkMerge(dt);
 		return false;
 	  }
 	  
-	  $("#bundle_product").hide();
 	  function selectProduct() {
 		if($("#provider_type").val() == "YZLDF7MB7S66Q") {
 			$("#seat1").html("Bulk Operations $799 (1 seat)");
@@ -486,6 +485,8 @@ bulk.BulkMerge(dt);
 			$("#seat15_19").html("Bulk Operations $1399 (15-19 seats)");
 		}
 	  }
+	  
+	  selectProduct();
 	</script>
 	</body>
 </html>
