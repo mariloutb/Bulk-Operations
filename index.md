@@ -81,45 +81,7 @@ layout: post
 									<th>Bulk Insert</th>
 									<td><i class="fa fa-check-square-o fa-2x"></i></td>
 								</tr>
-								<tr>
-									<th>Bulk Update</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>Bulk Delete</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>Bulk Merge</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								<tr>
-									<th>Bulk SaveChanges</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>Bulk Synchronize</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>DeleteFromQuery</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>UpdateFromQuery</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>Commercial License</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>Royalty-Free</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>Support & Upgrades (1 year)</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
+
 							</tbody>
 						</table>
 						
