@@ -676,14 +676,14 @@ header .card .card-contents a:hover {
 #feature h2 {
 	font-size: 42px;
 	letter-spacing: 4px;
-	padding-top: 60px;
+	padding-top: 30px;
 }
 #feature h3 {
 	border-bottom: 2px solid #000;
-	letter-spacing: 3px;
-	font-size: 36px;
+	letter-spacing: 1px;
+	font-size: 24px;
 	margin-bottom: 20px;
-	padding-top: 60px;
+	padding-top: 20px;
 	padding-bottom: 10px;
 }
 #feature .btn {
