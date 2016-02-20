@@ -60,15 +60,14 @@ layout: post
 						<div class="card">
 							<div class="card-block card-code">
 {% highlight csharp %}
-// Support all type of operations && AutoMapping
+// Support all type of operations
 var bulk = new BulkOperation(connection);
-
 bulk.BulkInsert(dt);
 bulk.BulkUpdate(dt);
 bulk.BulkDelete(dt);
 bulk.BulkMerge(dt);
 
-// Support Generic Type && Lambda Expressions
+// Support Entity / Lambda Mapping
 var bulk = new BulkOperation<Customer>(connection);
 bulk.ColumnInputExpression = c => new { c.Name,  c.FirstName };
 bulk.ColumnOutputExpression = c => c.CustomerID;
@@ -88,8 +87,46 @@ bulk.BulkMerge(customers);
 		<!-- features !-->
 		<div id="feature">
 			<div class="container">
-				<h2>What's C# Bulk Operations?</h2>
-				<p>The library offers high performance operations such as Bulk Insert, Update, Delete and Merge in a database.</p>
+				<h2>Scalable</h2>
+				<p>SQL Server - Benchmarks</p>
+				<table class="table">
+					<tr>
+						<th>Operations</th>
+						<th>1,000 Rows</th>
+						<th>10,000 Rows</th>
+						<th>100,000 Rows</th>
+						<th>1,000,000 Rows</th>
+					</tr>
+					<tr>
+						<th>Insert</th>
+						<td>6 ms</td>
+						<td>25 ms</td>
+						<td>200 ms</td>
+						<td>2,000 ms</td>
+					</tr>
+					<tr>
+						<th>Update</th>
+						<td>50 ms</td>
+						<td>80 ms</td>
+						<td>575 ms</td>
+						<td>6,500 ms</td>
+					</tr>
+					<tr>
+						<th>Delete</th>
+						<td>45 ms</td>
+						<td>70 ms</td>
+						<td>625 ms</td>
+						<td>6,800 ms</td>
+					</tr>
+					<tr>
+						<th>Merge</th>
+						<td>65 ms</td>
+						<td>160 ms</td>
+						<td>1,200 ms</td>
+						<td>12,000 ms</td>
+					</tr>
+				</table>				
+				
 				<p><b>Who Need It?</b></p>
 				<p>Anyone who need to perform an operation in the database on multiple rows fast and efficiently.</p>
 
