@@ -387,7 +387,7 @@ bulk.BulkMerge(dt);
 							</div>
 							<a href="https://github.com/zzzprojects/Bulk-Operations.NET" target="_blank"><i class="fa fa-github fa-5x"></i></a>
 							<div class="card-block">
-								<p class="card-text">Access the partial source of the library you're using (Under development).</p>
+								<p class="card-text">Access the partial source of the library you're using. (Under development)</p>
 								<a href="https://github.com/zzzprojects/Bulk-Operations.NET" target="_blank">GitHub</a>
 							</div>
 						</div>
