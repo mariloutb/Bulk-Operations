@@ -87,6 +87,8 @@ bulk.BulkMerge(customers);
 		<!-- features !-->
 		<div id="feature">
 			<div class="container">
+			
+				<!-- Scalable !-->
 				<h2>Scalable</h2>
 				<p>SQL Server - Benchmarks</p>
 				<table class="table">
@@ -125,29 +127,11 @@ bulk.BulkMerge(customers);
 						<td>1,200 ms</td>
 						<td>12,000 ms</td>
 					</tr>
-				</table>				
-				
-				<p><b>Who Need It?</b></p>
-				<p>Anyone who need to perform an operation in the database on multiple rows fast and efficiently.</p>
+				</table>	
 
-				<h3> Supported Data Source</h3>
-				<ul>
-					<li>Entity</li>
-					<li>DataTable</li>
-					<li>DataRow</li>
-					<li>DataReader</li>
-					<li>Expando Object</li>
-				</ul>
-{% highlight csharp %}
-var bulk = new BulkOperation<Customer>(connection);
-bulk.BulkInsert(customers); // Entity
-bulk.BulkInsert(dt); // DataTable
-bulk.BulkInsert(dr); // DataRow
-bulk.BulkInsert(reader); // DataReader
-bulk.BulkInsert(expando); // ExpandoObject
-{% endhighlight %}	
-
-				<h3> Supported Provider</h3>
+				<!-- Extensible !-->
+				<h2>Extensible</h2>
+				<p>Support Multiple SQL Providers:</p>
 				<ul>
 					<li>SQL Server 2008+</li>
 					<li>SQL Azure</li>
@@ -155,10 +139,67 @@ bulk.BulkInsert(expando); // ExpandoObject
 					<li>MySQL</li>
 					<li>SQLite</li>
 				</ul>
+
+				<p>Support Multiple DataSources:</p>
+				<ul>
+					<li>Entity</li>
+					<li>DataTable</li>
+					<li>DataRow</li>
+					<li>DataReader</li>
+					<li>DataSet</li>
+					<li>Expando Object</li>
+				</ul>
+				
+				<!-- Insert - Output Identity Value !-->
+				<h2>Scalable</h2>
+				<h3>Problem</h3>
+				<p>You need to output newly generated identity value but SqlBulkCopy do not support it.</p>
+				<h3>Solution</h3>
+				<p>Map your identity column with output direction.</p>
 {% highlight csharp %}
-// One class for all providers!
 var bulk = new BulkOperation(connection);
+
+bulk.ColumnMappings.Add("CustomerID", ColumnMappingDirectionType.Output);
+// ... mappings ...
+
+bulk.BulkInsert(dt);
 {% endhighlight %}	
+				<h3>Flexibility</h3>
+				<p>You can also output concurrency column (Timestamp) or any other column values. All kind of mapping direction are supported including "Formula" to use with a SQL Formula.</p>
+				
+				<!-- Entity DataSource / Lambda Mapping !-->
+				<h2>Entity DataSource / Lambda Mapping</h2>
+				<h3>Problem</h3>
+				<p>You have a list of entity to insert but SqlBulkCopy doesn't support entity and lambda expression mapping.</p>
+				<h3>Solution</h3>
+				<p>Create a generic bulk operations with your entity type and use lambda expression for your column input, output and primary key mapping.</p>
+{% highlight csharp %}
+var bulk = new BulkOperation<Customer>(connection);
+
+bulk.ColumnInputExpression = c => new { c.Name,  c.FirstName };
+bulk.ColumnOutputExpression = c => c.CustomerID;
+bulk.ColumnPrimaryKeyExpression = c => c.Code;
+
+bulk.BulkMerge(customers);
+{% endhighlight %}	
+				<h3>Maintainability</h3>
+				<p>Get rid of hardcoded string and use strongly-typed lambda expressions.</p>
+				
+				<!-- AutoMapping & Case Sensitivity !-->
+				<h2>AutoMapping & Case Sensitivity</h2>
+				<h3>Problem</h3>
+				<p>You have a DataTable which columns name match name in the database but SqlBulkCopy throw an error because name match are case insensitive.</p>
+				<h3>Solution</h3>
+				<p>Turn off case sensitivity with <b>IsCaseSensitive</b> property.</p>
+{% highlight csharp %}
+var bulk = new BulkOperation(connection);
+
+bulk.IsCaseSensitive = false;
+
+bulk.BulkMerge(dt);
+{% endhighlight %}	
+				<h3>Readability</h3>
+				<p>Remove useless code which would have required to create your own mapping and keep the essentials.</p>
 			</div>
 		</div>
 		
