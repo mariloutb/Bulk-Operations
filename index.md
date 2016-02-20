@@ -219,7 +219,6 @@ bulk.BulkMerge(dt);
 							<li>Make your customer do their job better</li>
 							<li>Make your customer happier!</li>
 						</ul>
-						<p>Thousands of <span class="text-bold">development hours</span> and thousands of <span class="text-bold">unit tests</span> to make the best and most robust third party library for performing Bulk Operations.</p>
 						<hr class="m-y-md" />
 						<p>Every month, a <a href="https://www.nuget.org/packages/Z.BulkOperations/" target="_blank">FREE trial</a> of the PRO version is available to let you evaluate all its features without limitations.</p>					
 					</div>
