@@ -674,15 +674,15 @@ header .card .card-contents a:hover {
 
 /* feature */
 #feature h2 {
+		border-bottom: 2px solid #000;
 	font-size: 42px;
 	letter-spacing: 4px;
 	padding-top: 30px;
 }
 #feature h3 {
-	border-bottom: 2px solid #000;
 	letter-spacing: 1px;
-	font-size: 24px;
-	margin-bottom: 20px;
+	font-size: 16px;
+	font-weight: 700;
 	padding-top: 20px;
 	padding-bottom: 10px;
 }
