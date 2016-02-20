@@ -128,7 +128,7 @@ bulk.BulkMerge(customers);
 						<td>12,000 ms</td>
 					</tr>
 				</table>
-				<p class="text-style-italic">As fast as SqlBulkCopy for insert but with way more capabilities</p>
+				<p class="font-italic">As fast as SqlBulkCopy for insert but with way more capabilities</p>
 
 				<!-- Extensible !-->
 				<h2>Extensible</h2>
