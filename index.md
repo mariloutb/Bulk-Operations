@@ -91,7 +91,7 @@ bulk.BulkMerge(customers);
 				<!-- Scalable !-->
 				<h2>Scalable</h2>
 				<p>SQL Server - Benchmarks</p>
-				<table class="table">
+				<table class="table table-inverse table-striped table-hover">
 					<tr>
 						<th>Operations</th>
 						<th>1,000 Rows</th>
@@ -151,7 +151,7 @@ bulk.BulkMerge(customers);
 				</ul>
 				
 				<!-- Insert - Output Identity Value !-->
-				<h2>Scalable</h2>
+				<h2>Insert - Output Identity Value</h2>
 				<h3>Problem</h3>
 				<p>You need to output newly generated identity value but SqlBulkCopy do not support it.</p>
 				<h3>Solution</h3>
