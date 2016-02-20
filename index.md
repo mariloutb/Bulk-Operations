@@ -45,7 +45,7 @@ layout: post
 						<div class="card">
 							<div class="card-block">
 								<h1 class="card-title">C# Bulk Operations</h1>
-								<h3>Bulk Insert, Update, Delete and Merge</h3>
+								<h3>High performance SQL Bulk Operations with hundreds of flexible features missing from SqlBulkCopy.</h3>
 								<hr class="m-y-md" />
 								<div class="lead">
 									<a href="http://www.zzzprojects.com/products/" target="_blank" class="btn btn-success btn-lg btn-left" role="button"><span><i class="fa fa-cloud-download fa-2x"></i>&nbsp;<span>Download</span></span></a>
@@ -163,6 +163,13 @@ var bulk = new BulkOperation(connection);
 								</tr>
 								<tr>
 									<th>Bulk Merge</th>
+									<td><i class="fa fa-check-square-o fa-2x"></i></td>
+								<tr>
+									<th>Bulk SaveChanges</th>
+									<td><i class="fa fa-check-square-o fa-2x"></i></td>
+								</tr>
+								<tr>
+									<th>Bulk Synchronize</th>
 									<td><i class="fa fa-check-square-o fa-2x"></i></td>
 								</tr>
 								<tr>
