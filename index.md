@@ -92,7 +92,7 @@ bulk.BulkMerge(customers);
 				<h2>Scalable</h2>
 				<p>SQL Server - Benchmarks</p>
 				<table class="table table-striped table-hover" style="background-color: white;">
-					<tr>
+					<tr class="thead-inverse">
 						<th>Operations</th>
 						<th>1,000 Rows</th>
 						<th>10,000 Rows</th>
