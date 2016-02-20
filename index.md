@@ -675,8 +675,8 @@ header .card .card-contents a:hover {
 /* feature */
 #feature h2 {
 	border-bottom: 2px solid #000;
-	font-size: 42px;
-	letter-spacing: 4px;
+	font-size: 32px;
+	letter-spacing: 2px;
 	padding-top: 30px;
 	padding-bottom: 10px;
 }
