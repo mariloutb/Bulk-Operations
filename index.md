@@ -44,7 +44,7 @@ layout: post
 					<div class="col-lg-6">
 						<div class="card">
 							<div class="card-block">
-								<h1 class="card-title">C# Bulk Operations</h1>
+								<h1 class="card-title">Bulk Operations</h1>
 								<h3>High performance SQL Bulk Operations with hundreds of flexible features missing from SqlBulkCopy.</h3>
 								<hr class="m-y-md" />
 								<div class="lead">
