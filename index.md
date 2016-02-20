@@ -214,10 +214,14 @@ bulk.BulkMerge(dt);
 					<div class="col-lg-6">
 						<h2>Pricing</h2>
 						<hr class="m-y-md" />
-						<p>Become a <span class="text-bold text-green">PRO</span> now and start saving time and money!</p>
+						<ul>
+							<li>Make your application work faster</li>
+							<li>Make your customer do their job better</li>
+							<li>Make your customer happier!</li>
+						</ul>
 						<p>Thousands of <span class="text-bold">development hours</span> and thousands of <span class="text-bold">unit tests</span> to make the best and most robust third party library for performing Bulk Operations.</p>
 						<hr class="m-y-md" />
-						<p>Every month, a new monthly trial of the PRO Version is available to let you evaluate all its features without limitations.</p>					
+						<p>Every month, a <a href="https://www.nuget.org/packages/Z.BulkOperations/" target="_blank">FREE trial</a> of the PRO version is available to let you evaluate all its features without limitations.</p>					
 					</div>
 					<div class="col-lg-6">
 						<table class="table table-hover table-bordered">
