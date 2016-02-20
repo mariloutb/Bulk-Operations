@@ -81,7 +81,15 @@ layout: post
 									<th>Bulk Insert</th>
 									<td><i class="fa fa-check-square-o fa-2x"></i></td>
 								</tr>
-
+								<tr>
+									<th>Bulk Update</th>
+									<td><i class="fa fa-check-square-o fa-2x"></i></td>
+								</tr>
+								<tr>
+									<th>Bulk Delete</th>
+									<td><i class="fa fa-check-square-o fa-2x"></i></td>
+								</tr>
+							
 							</tbody>
 						</table>
 						
