@@ -61,12 +61,7 @@ layout: post
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-6">
-						<h2>Pricing</h2>
-						<hr class="m-y-md" />
-						<p>Become a <span class="text-bold text-green">PRO</span> now and start saving time and money!</p>
-						<p>Thousands of <span class="text-bold">development hours</span> and thousands of <span class="text-bold">unit tests</span> to make the best and most robust third party library for performing Bulk Operations.</p>
-						<hr class="m-y-md" />
-						<p>Every month, a new monthly trial of the PRO Version is available to let you evaluate all its features without limitations.</p>					
+						<h2>Pricing</h2>				
 					</div>
 					<div class="col-lg-6">
 						<table class="table table-hover table-bordered">
@@ -79,45 +74,6 @@ layout: post
 							<tbody>
 								<tr>
 									<th>Bulk Insert</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>Bulk Update</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>Bulk Delete</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>Bulk Merge</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								<tr>
-									<th>Bulk SaveChanges</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>Bulk Synchronize</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>DeleteFromQuery</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>UpdateFromQuery</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>Commercial License</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>Royalty-Free</th>
-									<td><i class="fa fa-check-square-o fa-2x"></i></td>
-								</tr>
-								<tr>
-									<th>Support & Upgrades (1 year)</th>
 									<td><i class="fa fa-check-square-o fa-2x"></i></td>
 								</tr>
 							</tbody>
