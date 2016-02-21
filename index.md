@@ -7,10 +7,10 @@ layout: post
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta http-equiv="x-ua-compatible" content="ie=edge">
-		<meta name="description" content="C# Bulk Insert, update, delete and merge in SQL Server, SQL Azure, SQL Compact, MySQL and SQLite">
+		<meta name="description" content="Improve SQL insert, update, delete and merge performance and overcome SqlBulkCopy limitations">
 		<meta name="keywords" content="BulkSaveChanges BulkInsert BulkUpdate BulkDelete BulkMerge Insert Update Delete Merge SQLServer SQLAzure SQLCompact MySQL SQLite">
 		<meta name="msvalidate.01" content="89359D9C492A475C0061398008D105FB" />
-		<title>C# Bulk Insert, update, delete and merge in SQL Server, SQL Azure, SQL Compact, MySQL and SQLite</title>
+		<title>C# SQL Bulk Operations | High performance C# bulk insert, update, delete and merge for SQL Server, SQL Azure, SQL Compact, MySQL and SQLite.</title>
 		<link rel="icon" type="image/png" href="http://bulk-operations.net/images/logo.png">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
 		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -44,8 +44,8 @@ layout: post
 					<div class="col-lg-6">
 						<div class="card">
 							<div class="card-block">
-								<h1 class="card-title">C# Bulk Operations</h1>
-								<h3>High performance C# Bulk Operations in SQL with hundreds of flexible features missing from SqlBulkCopy.</h3>
+								<h3 class="card-title">C# Bulk Operations</h3>
+								<h1>Improve SQL insert, update, delete and merge performance and overcome SqlBulkCopy limitations</h1>
 								<hr class="m-y-md" />
 								<div class="lead">
 									<a href="https://www.nuget.org/packages/Z.BulkOperations/" target="_blank" class="btn btn-success btn-lg btn-left" role="button"><span><i class="fa fa-cloud-download fa-2x"></i>&nbsp;<span>Download</span></span></a>
@@ -612,10 +612,10 @@ header .card {
 	border: none;
 	color: #f1f1f1;
 }
-header .card h1 {
+header .card h3 {
 	font-size: 3.0rem;
 }
-header .card h3 {
+header .card h1 {
 	font-size: 1.3rem;
 }
 header .card hr {
