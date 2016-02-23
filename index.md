@@ -555,7 +555,7 @@ bulk.BulkMerge(dt);
 	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	  ga('create', 'UA-55584370-8', 'auto');
+	  ga('create', 'UA-55584370-7', 'auto');
 	  ga('send', 'pageview');
 	  
 	  function purchase_validate() {
