@@ -69,7 +69,7 @@ bulk.BulkUpdate(dt);
 bulk.BulkDelete(dt);
 bulk.BulkMerge(dt);
 
-// Support Entity / Lambda Mapping
+// Support List<T> and Lambda Mapping
 var bulk = new BulkOperation<Customer>(connection);
 bulk.ColumnInputExpression = c => new { c.Name,  c.FirstName };
 bulk.ColumnOutputExpression = c => c.CustomerID;
@@ -172,11 +172,10 @@ bulk.BulkMerge(customers);
 					</div>
 					<div class="col-lg-7">
 {% highlight csharp %}
-// Easy to use
-context.BulkSaveChanges();
+// Output newly inserted identity value after an insert
+bulk.ColumnMappings.Add("CustomerID", ColumnMappingDirectionType.Output);
 
-// Easy to customize
-context.BulkSaveChanges(operation => operation.BatchSize = 1000);
+bulk.BulkInsert(dt);
 {% endhighlight %}
 					</div>
 				</div>
@@ -201,16 +200,14 @@ context.BulkSaveChanges(operation => operation.BatchSize = 1000);
 					</div>
 					<div class="col-lg-7">
 {% highlight csharp %}
-// Use all kind of bulk operations
-context.BulkInsert(customers);
-context.BulkUpdate(customers);
-context.BulkDelete(customers);
-
-// Customize your operation
-context.BulkMerge(customers, operation => {
-   operation.BatchSize = 1000;
-   operation.ColumnPrimaryKeyExpression = customer => customer.Code;
-});
+// Support all type of operations
+var bulk = new BulkOperation(connection);
+bulk.BulkInsert(dt);
+bulk.BulkUpdate(dt);
+bulk.BulkDelete(dt);
+bulk.BulkMerge(dt);
+bulk.BulkSaveChanges(ds);
+bulk.BulkSynchronize(dt);
 {% endhighlight %}	
 					</div>
 				</div>
@@ -232,15 +229,16 @@ context.BulkMerge(customers, operation => {
 					</div>
 					<div class="col-lg-7">
 {% highlight csharp %}
-// DELETE all customers that are inactive for more than 2 years
-context.Customers
-    .Where(x => x.LastLogin < DateTime.Now.AddYears(-2))
-    .DeleteFromQuery(operation => operation.BatchSize = 10000);
- 
-// UPDATE all customers that are inactive for more than 2 years
-context.Customers
-    .Where(x => x.Actif && x.LastLogin < DateTime.Now.AddYears(-2))
-    .UpdateFromQuery(x => new Customer {Actif = false});
+var bulk= new BulkOperation<Customer>(connection);
+bulk.DestinationTableName = "Customer";
+
+// Column Input Expression
+bulk.ColumnInputExpression = c => new { c.Code, c.Name };
+
+// Column Output Expression
+bulk.ColumnOutputExpression = c => c.CustomerID;
+
+bulk.BulkInsert(customers);
 {% endhighlight %}	
 					</div>
 				</div>
@@ -261,15 +259,16 @@ context.Customers
 					</div>
 					<div class="col-lg-7">
 {% highlight csharp %}
-// DELETE all customers that are inactive for more than 2 years
-context.Customers
-    .Where(x => x.LastLogin < DateTime.Now.AddYears(-2))
-    .DeleteFromQuery(operation => operation.BatchSize = 10000);
- 
-// UPDATE all customers that are inactive for more than 2 years
-context.Customers
-    .Where(x => x.Actif && x.LastLogin < DateTime.Now.AddYears(-2))
-    .UpdateFromQuery(x => new Customer {Actif = false});
+var bulk = new BulkOperation<Customer>(connection);
+
+// DELETE all customers inactive for more than 2 years
+bulk.DeleteFromQuery(
+    c => c.Where(x => x.LastLogin < DateTime.Now.AddYears(-2)));
+
+// UPDATE all customer inactive for more than 2 years
+bulk.UpdateFromQuery(
+    c => c.Where(x => x.Actif && x.LastLogin < DateTime.Now.AddYears(-2)),
+    c => new Customer {Actif = false});
 {% endhighlight %}	
 					</div>
 				</div>
@@ -292,20 +291,13 @@ context.Customers
 					</div>
 					<div class="col-lg-7">
 {% highlight csharp %}
-// DELETE all customers that are inactive for more than 2 years
-context.Customers
-    .Where(x => x.LastLogin < DateTime.Now.AddYears(-2))
-    .DeleteFromQuery(operation => operation.BatchSize = 10000);
- 
-// UPDATE all customers that are inactive for more than 2 years
-context.Customers
-    .Where(x => x.Actif && x.LastLogin < DateTime.Now.AddYears(-2))
-    .UpdateFromQuery(x => new Customer {Actif = false});
+var bulk = new BulkOperation(connection);
+bulk.CaseSensitive = CaseSensitiveType.Insensitive;
+bulk.ColumnMappings.Add("cOdE", "Code");
+bulk.BulkMerge(dt);
 {% endhighlight %}	
 					</div>
 				</div>
-				
-				
 			</div>
 		</div>
 		
