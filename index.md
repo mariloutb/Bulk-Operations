@@ -219,7 +219,7 @@ bulk.BulkSynchronize(dt);
 				<h2>Generic List&lt;&gt; as DataSource</h2>
 				<div class="row">
 					<div class="col-lg-5">
-						<p class="feature-tagline">Improve code <span class="text-bold-red">maintainability</span> by using strongly-type lambda expression over hardcoded string.</p>
+						<p class="feature-tagline">Improve code <span class="text-bold-red">maintainability</span> by using strongly-typed lambda expression over hardcoded string.</p>
 						<ul>
 							<li>Use Bulk Operations with Generic List&lt;&gt;</li>
 							<li>Use Bulk Operations with Expando Object</li>
