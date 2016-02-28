@@ -46,7 +46,7 @@ layout: post
 							<div class="card-block">
 								<h3 class="card-title">C# Bulk Operations</h3>
 								<hr class="m-y-md" />
-								<h1>Improve Performance with Bulk Insert, Update, Delete and Merge in SQL and Overcome C# SqlBulkCopy Limitations</h1>
+								<h1>Improve Performance with Bulk Operations and Overcome C# SqlBulkCopy Limitations</h1>
 								<hr class="m-y-md" />
 								<div class="lead">
 									<a href="https://www.nuget.org/packages/Z.BulkOperations/" target="_blank" class="btn btn-success btn-lg btn-left" role="button" onclick="ga('send', 'event', { eventAction: 'download'});"><span><i class="fa fa-cloud-download fa-2x"></i>&nbsp;<span>Download</span></span></a>
