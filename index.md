@@ -91,7 +91,7 @@ bulk.BulkMerge(customers);
 				<h2>High Performance Operations</h2>
 				<div class="row">
 					<div class="col-lg-5">
-						<p class="featured-tagline">Use <span class="text-bold-red">scalable</span> bulk operations and always get the best <span class="text-bold-red">performance</span> available for your database provider.</p>
+						<p class="featured-tagline">Use <span class="text-bold-red">scalable</span> bulk operations (Bulk Insert, Update, Delete and Merge) and always get the best <span class="text-bold-red">performance</span> available for your database provider.</p>
 						<ul class="featured-list-sm">
 							<li>SQL Server 2008+</li>
 							<li>SQL Azure</li>
