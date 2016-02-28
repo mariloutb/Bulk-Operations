@@ -10,9 +10,9 @@ layout: post
 		<meta name="msvalidate.01" content="89359D9C492A475C0061398008D105FB" />
 		
 		<!-- seo !-->
-		<meta name="description" content="Improve performance for insert, update, delete and merge in SQL and overcome SqlBulkCopy limitations">
+		<meta name="description" content="Improve Performance with Bulk Insert, Update, Delete and Merge in SQL and Overcome C# SqlBulkCopy Limitations">
 		<meta name="keywords" content="BulkSaveChanges BulkInsert BulkUpdate BulkDelete BulkMerge Insert Update Delete Merge SQLServer SQLAzure SQLCompact MySQL SQLite">
-		<title>C# SQL Bulk Operations | High performance C# bulk insert, update, delete and merge for SQL Server, SQL Azure, SQL Compact, MySQL and SQLite.</title>
+		<title>SQL Bulk Operations | Overcome SqlBulkCopy Limitations with High Performance C# Bulk Insert, Update, Delete and Merge .NET Operations for SQL Server, SQL Azure, SQL Compact, MySQL and SQLite.</title>
 		
 		<!-- icon/css !-->
 		<link rel="icon" type="image/png" href="http://entityframework-plus.net/images/logo.png">
@@ -46,7 +46,7 @@ layout: post
 							<div class="card-block">
 								<h3 class="card-title">C# Bulk Operations</h3>
 								<hr class="m-y-md" />
-								<h1>Improve performance for insert, update, delete and merge in SQL and overcome SqlBulkCopy limitations</h1>
+								<h1>Improve Performance with Bulk Insert, Update, Delete and Merge in SQL and Overcome C# SqlBulkCopy Limitations</h1>
 								<hr class="m-y-md" />
 								<div class="lead">
 									<a href="https://www.nuget.org/packages/Z.BulkOperations/" target="_blank" class="btn btn-success btn-lg btn-left" role="button" onclick="ga('send', 'event', { eventAction: 'download'});"><span><i class="fa fa-cloud-download fa-2x"></i>&nbsp;<span>Download</span></span></a>
