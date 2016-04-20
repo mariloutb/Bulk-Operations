@@ -506,6 +506,7 @@ bulk.BulkMerge(dt);
 						<h3>Bulk Operations</h3>
 						<ul>
 							<li><a href="http://bulk-operations.net/" target="_blank">Bulk Operations</a></li>
+							<li><a href="http://dapper-plus.net/" target="_blank">Dapper Plus</a></li>
 						</ul>
 					</div>
 					<div class="col-lg-3">
