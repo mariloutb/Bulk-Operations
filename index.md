@@ -321,6 +321,8 @@ bulk.BulkMerge(customers);
 					</div>
 					<div class="col-lg-7">
 {% highlight csharp %}
+var bulk = new BulkOperation(connection)
+
 // Output newly inserted identity value after an insert
 bulk.ColumnMappings.Add("CustomerID", ColumnMappingDirectionType.Output);
 
@@ -381,13 +383,16 @@ bulk.BulkSynchronize(dt);
 var bulk= new BulkOperation<Customer>(connection);
 bulk.DestinationTableName = "Customer";
 
-// Column Input Expression
+// Column Columns to Input
 bulk.ColumnInputExpression = c => new { c.Code, c.Name };
 
-// Column Output Expression
+// Choose Columns to Output
 bulk.ColumnOutputExpression = c => c.CustomerID;
 
-bulk.BulkInsert(customers);
+// Choose Key to Use
+bulk.ColumnPrimaryKeyExpression = c => c.Code;
+
+bulk.BulkMerge(customers);
 {% endhighlight %}	
 					</div>
 				</div>
@@ -414,7 +419,7 @@ var bulk = new BulkOperation<Customer>(connection);
 bulk.DeleteFromQuery(
     c => c.Where(x => x.LastLogin < DateTime.Now.AddYears(-2)));
 
-// UPDATE all customer inactive for more than 2 years
+// UPDATE all customers inactive for more than 2 years
 bulk.UpdateFromQuery(
     c => c.Where(x => x.Actif && x.LastLogin < DateTime.Now.AddYears(-2)),
     c => new Customer {Actif = false});
