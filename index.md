@@ -254,7 +254,7 @@ bulk.BulkMerge(customers);
 						</ul>
 					</div>
 					<div class="col-lg-7">
-						<table class="table table-striped table-hover">
+						<table class="table table-striped table-hover table-responsive">
 							<tr class="thead-inverse">
 								<th>Operations</th>
 								<th>1,000 Rows</th>
@@ -291,7 +291,7 @@ bulk.BulkMerge(customers);
 								<td>12,000 ms</td>
 							</tr>
 						</table>
-						
+
 						<p class="text-muted">* Benchmark for SQL Server</p>
 					</div>
 				</div>
