@@ -201,35 +201,21 @@ layout: post
 						<div class="card">
 							<br />
 							<div class="card-block card-code">
-<figure class="highlight"><pre><code data-lang="csharp" class="language-csharp"><span class="c1">// Support all type of operations
-</span><span class="n">var</span> <span class="n">bulk</span> <span class="p">=</span> <span class="k">new</span> <span class="nf">BulkOperation</span><span class="p">(</span><span class="n">connection</span><span class="p">);</span>
-<span class="n">bulk</span><span class="p">.</span><span class="nf">BulkInsert</span><span class="p">(</span><span class="n">dt</span><span class="p">);</span>
-<span class="n">bulk</span><span class="p">.</span><span class="nf">BulkUpdate</span><span class="p">(</span><span class="n">dt</span><span class="p">);</span>
-<span class="n">bulk</span><span class="p">.</span><span class="nf">BulkDelete</span><span class="p">(</span><span class="n">dt</span><span class="p">);</span>
-<span class="n">bulk</span><span class="p">.</span><span class="nf">BulkMerge</span><span class="p">(</span><span class="n">dt</span><span class="p">);</span>
-
-<span class="c1">// Support List&lt;T&gt; and Lambda Mapping
-</span><span class="n">var</span> <span class="n">bulk</span> <span class="p">=</span> <span class="k">new</span> <span class="n">BulkOperation</span><span class="p">&lt;</span><span class="n">Customer</span><span class="p">&gt;(</span><span class="n">connection</span><span class="p">);</span>
-<span class="n">bulk</span><span class="p">.</span><span class="n">ColumnInputExpression</span> <span class="p">=</span> <span class="n">c</span> <span class="p">=&gt;</span> <span class="k">new</span> <span class="p">{</span> <span class="n">c</span><span class="p">.</span><span class="n">Name</span><span class="p">,</span>  <span class="n">c</span><span class="p">.</span><span class="n">FirstName</span> <span class="p">};</span>
-<span class="n">bulk</span><span class="p">.</span><span class="n">ColumnOutputExpression</span> <span class="p">=</span> <span class="n">c</span> <span class="p">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">CustomerID</span><span class="p">;</span>
-<span class="n">bulk</span><span class="p">.</span><span class="n">ColumnPrimaryKeyExpression</span> <span class="p">=</span> <span class="n">c</span> <span class="p">=&gt;</span> <span class="n">c</span><span class="p">.</span><span class="n">Code</span><span class="p">;</span>
-<span class="n">bulk</span><span class="p">.</span><span class="nf">BulkMerge</span><span class="p">(</span><span class="n">customers</span><span class="p">);</span></code></pre></figure>
-<!--
 {% highlight csharp %}
-// Support all type of operations
+// Easy to use
 var bulk = new BulkOperation(connection);
 bulk.BulkInsert(dt);
 bulk.BulkUpdate(dt);
 bulk.BulkDelete(dt);
 bulk.BulkMerge(dt);
 
-// Support List<T> and Lambda Mapping
+// Easy to customize
 var bulk = new BulkOperation<Customer>(connection);
 bulk.ColumnInputExpression = c => new { c.Name,  c.FirstName };
 bulk.ColumnOutputExpression = c => c.CustomerID;
 bulk.ColumnPrimaryKeyExpression = c => c.Code;
 bulk.BulkMerge(customers);
-{% endhighlight %}!-->
+{% endhighlight %}
 							</div>
 						</div>
 					</div>
