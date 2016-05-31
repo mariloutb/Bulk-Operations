@@ -248,7 +248,7 @@ bulk.BulkMerge(customers);
 						</ul>
 						<hr class="m-y-md" />
 						<p class="font-weight-bold">Using Entity Framework or Dapper?</p>
-						<ul>
+						<ul class="ul-link">
 							<li><a href="http://entityframework-extensions.net/" target="_blank">Entity Framework Extensions</a></li>
 							<li><a href="http://dapper-plus.net/" target="_blank">Dapper Plus</a></li>
 						</ul>
@@ -545,7 +545,7 @@ bulk.BulkMerge(dt);
 						<p>Every month, a <a href="https://www.nuget.org/packages/Z.BulkOperations/" target="_blank" onclick="ga('send', 'event', { eventAction: 'download'});">FREE trial</a> of the PRO version is available to let you evaluate all its features without limitations.</p>
 						<hr class="m-y-md" />
 						<p class="font-weight-bold">Using Entity Framework or Dapper?</p>
-						<ul>
+						<ul class="ul-link">
 							<li><a href="http://entityframework-extensions.net/" target="_blank">Entity Framework Extensions</a></li>
 							<li><a href="http://dapper-plus.net/" target="_blank">Dapper Plus</a></li>
 						</ul>
