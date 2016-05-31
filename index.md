@@ -552,7 +552,7 @@ bulk.BulkMerge(dt);
 						<ul>
 							<li><a href="http://entityframework-extensions.net/" target="_blank">Entity Framework Extensions</a></li>
 							<li><a href="http://dapper-plus.net/" target="_blank">Dapper Plus</a></li>
-						<ul>
+						</ul>
 					</div>
 					<div class="col-lg-6">
 						<table class="table table-hover table-bordered">
