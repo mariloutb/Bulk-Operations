@@ -96,39 +96,43 @@ layout: post
 		<!-- menu !-->
 		<nav id="menu" class="navbar">
 			<div class="container">
-				
-				<!-- navbar-bar-header !-->
-				<ul class="nav navbar-nav navbar-nav-header">
-					<li class="nav-item">
-						<h1>C# Bulk Operations
-						<small>Bulk Insert, Update, Delete, Merge, and More!</small>
-						</h1>
-					</li>
-				</ul>
-				
-				<!-- navbar-bar-menu !-->
-				<ul class="nav navbar-nav pull-xs-right navbar-nav-menu hidden-md-down">
-					<li class="nav-item">
-						<a class="nav-link" href="https://github.com/zzzprojects/Bulk-Operations/wiki" target="_blank">Wiki</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="https://github.com/zzzprojects/Bulk-Operations/issues" target="_blank">Forum</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="#pro">PRO Version</a>
-					</li>
-					<li class="nav-item">
-						<a href="https://www.nuget.org/packages/Z.BulkOperations/" target="_blank" class="btn btn-success" role="button" onclick="ga('send', 'event', { eventAction: 'download'});"><span><i class="fa fa-cloud-download"></i>&nbsp;<span>Download</span></span></a>
-					</li>
-				</ul>
-				
-				<!-- navbar-bar-menu-mobile !-->
-				<ul class="nav navbar-nav pull-xs-right hidden-lg-up navbar-bar-menu-mobile">
-					<li class="nav-item">
-						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-mobile">&#9776;</button>
-					</li>
-				</ul>
-				
+				<div class="row">
+					<div class="col-xs-10 col-lg-12">
+						<!-- navbar-bar-header !-->
+						<ul class="nav navbar-nav navbar-nav-header">
+							<li class="nav-item">
+								<h1>C# Bulk Operations
+								<small>Bulk Insert, Update, Delete, Merge, and More!</small>
+								</h1>
+							</li>
+						</ul>
+						
+						<!-- navbar-bar-menu !-->
+						<ul class="nav navbar-nav pull-xs-right navbar-nav-menu hidden-md-down">
+							<li class="nav-item">
+								<a class="nav-link" href="https://github.com/zzzprojects/Bulk-Operations/wiki" target="_blank">Wiki</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="https://github.com/zzzprojects/Bulk-Operations/issues" target="_blank">Forum</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="#pro">PRO Version</a>
+							</li>
+							<li class="nav-item">
+								<a href="https://www.nuget.org/packages/Z.BulkOperations/" target="_blank" class="btn btn-success" role="button" onclick="ga('send', 'event', { eventAction: 'download'});"><span><i class="fa fa-cloud-download"></i>&nbsp;<span>Download</span></span></a>
+							</li>
+						</ul>
+					</div>
+					
+					<div class="col-xs-2">
+						<!-- navbar-bar-menu-mobile !-->
+						<ul class="nav navbar-nav pull-xs-right hidden-lg-up navbar-bar-menu-mobile">
+							<li class="nav-item">
+								<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menu-mobile">&#9776;</button>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</nav>
 		
