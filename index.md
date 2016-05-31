@@ -534,7 +534,7 @@ bulk.BulkMerge(dt);
 					<div class="col-lg-6">
 						<h2>Pricing</h2>
 						<hr class="m-y-md" />
-						<p class="pricing-tagline">Join thousands of projects already using bulk operations  and make <span class="text-bold-red">YOUR</span> customers happy.</p>
+						<p class="pricing-tagline">Join thousands of projects already using bulk operations and make <span class="text-bold-red">YOUR</span> customers happy.</p>
 						<ul>
 							<li>Improve applications responsivity</li>
 							<li>Minimize time your customers wait</li>
