@@ -244,7 +244,7 @@ bulk.BulkMerge(customers);
 							<li>MySQL</li>
 							<li>SQLite</li>
 							<li>PostgreSQL</li>
-							<li>Oracle <i>(Beta)</i></li>
+							<li>Oracle</li>
 						</ul>
 						<hr class="m-y-md" />
 						<p class="font-weight-bold">Using Entity Framework or Dapper?</p>
