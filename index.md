@@ -613,9 +613,11 @@ bulk.BulkMerge(dt);
 								<input type="hidden" name="on0" value="Seats">
 								<select id="provider_type" name="hosted_button_id" class="form-control" onchange="selectProduct()">
 									<option value="P4LJES7RRRMRE">SQL Server/ Azure Provider</option>
+									<option value="B5U6W6V5666E6">Oracle Provider</option>
+									<option value="VEN7DRSDH74YQ">MySQL Provider</option>
+									<option value="CYXZRWYMV28W6">PostgreSQL</option>
 									<option value="VL4K5FXSRWV88">SQL Compact Provider</option>
 									<option value="MVSYAVJHUY9DS">SQLite Provider</option>
-									<option value="VEN7DRSDH74YQ">MySQL Provider</option>
 									<option value="YZLDF7MB7S66Q">ALL Providers</option>
 								</select> 
 								<br />
