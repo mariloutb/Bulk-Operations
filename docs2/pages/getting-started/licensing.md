@@ -5,7 +5,7 @@ You can evaluate our library for several months before purchasing it.
 
 The trial period stops at the end of the month. When you receive a license expiration error, download the latest version which will automatically extend your trial period.
 
-You can also purchase the library [here](/pricing)
+You can also purchase the library [here](/pricing).
 
 Upon purchase, you will receive a license name and a license key.
 
@@ -56,10 +56,10 @@ Z.BulkOperations.LicenseManager.AddLicense(licenseName, licenseKey);
 - **WinForm App:** Use the main thread method to activate your license.
 - **Win Service:** Use the OnStart method to activate your license
 
-> The AddLicense must be set before the first call to the library. Otherwise, you will start the evaluation period
+> The AddLicense must be set before the first call to the library. Otherwise, you will start the evaluation period.
 
 ## How can I check if my license is valid?
-The validate method allow you to know whether your license is valid or not.
+The validate method allows you to know whether your license is valid or not.
 
 ```csharp
 // CHECK for default provider (SQL Server)
