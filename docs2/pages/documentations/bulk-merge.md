@@ -61,7 +61,7 @@ bulk.BulkMergeAsync(customers, cancellationToken);
 [Try it (DataTable)](https://dotnetfiddle.net/LULDpj) 
 
 ### Bulk Merge with options
-The `options` parameter let you use a lambda expression to customize the way entities are inserted/updated.
+The `options` parameter lets you use a lambda expression to customize the way entities are inserted/updated.
 
 ```csharp
 bulk.AutoMapKeyExpression = c => c.Code;
@@ -91,10 +91,10 @@ bulk.BulkMerge(customers);
 ### Merge and include/exclude properties
 You want to merge your entities but only for specific properties.
 
-- `ColumnInputExpression`: This option let you choose which properties to map.
-- `ColumnIgnoreExpression`: This option let you ignore properties that are auto-mapped.
-- `IgnoreOnMergeInsertExpression`: This option let you ignore properties only for the `INSERT` part.
-- `IgnoreOnMergeUpdateExpression`: This option let you ignore properties only for the `UPDATE` part.
+- `ColumnInputExpression`: This option lets you choose which properties to map.
+- `ColumnIgnoreExpression`: This option lets you ignore properties that are auto-mapped.
+- `IgnoreOnMergeInsertExpression`: This option lets you ignore properties only for the `INSERT` part.
+- `IgnoreOnMergeUpdateExpression`: This option lets you ignore properties only for the `UPDATE` part.
 
 ```csharp
 bulk.ColumnInputExpression = c => new { c.CustomerID, c.Name};
@@ -119,7 +119,7 @@ bulk.BulkMerge(dtCustomers);
 [Try it (DataTable)](https://dotnetfiddle.net/TIfeSG)
 
 ### Merge with custom key
-You want to merge entities, but you don't have the primary key. The `ColumnPrimaryKeyExpression` let you use as a key any property or combination of properties.
+You want to merge entities, but you don't have the primary key. The `ColumnPrimaryKeyExpression` lets you use as a key any property or combination of properties.
 
 ```csharp
 bulk.AutoMapKeyExpression = c => c.Code;
@@ -153,7 +153,7 @@ bulk.BulkMerge(invoices.SelectMany(x => x.Items).ToList());
 [Try it (DataTable)](https://dotnetfiddle.net/rhq5ZM) 
 
 ### More scenarios
-Hundred of scenarios has been solved and are now supported.
+Hundreds of scenarios have been solved and are now supported.
 
 The best way to ask for a special request or to find out if a solution for your scenario already exists is by contacting us:
 info@zzzprojects.com
