@@ -2,7 +2,7 @@
 
 ## Description
 
-The `BulkUpdate` method let you update a large number of entities in your database.
+The `BulkUpdate` method lets you update a large number of entities in your database.
 
 ```csharp
 // easy to use
@@ -48,7 +48,7 @@ The `BulkUpdate` method is **fast** but also **flexible** to let you handle vari
 ## Getting Started
 
 ### Bulk Update
-The `BulkUpdate` and `BulkUpdateAync` methods your let update a large number of entities in your database.
+The `BulkUpdate` and `BulkUpdateAync` methods let you update a large number of entities in your database.
 
 ```csharp
 bulk.BulkUpdate(customers);
@@ -79,8 +79,8 @@ bulk.BulkUpdate(dtCustomers);
 ### Update and include/exclude properties
 You want to update your entities but only for specific properties.
 
-- `ColumnInputExpression`: This option let you choose which properties to map.
-- `IgnoreOnUpdateExpression`: This option let you ignore properties that are auto-mapped.
+- `ColumnInputExpression`: This option lets you choose which properties to map.
+- `IgnoreOnUpdateExpression`: This option lets you ignore properties that are auto-mapped.
 
 ```csharp
 bulk.IgnoreOnUpdateExpression = c =>  new { c.ColumnToIgnore };
@@ -102,7 +102,7 @@ bulk.BulkUpdate(dtCustomers);
 [Try it (DataTable)](https://dotnetfiddle.net/EyAtSE) 
 
 ### Update with custom key
-You want to update entities, but you don't have the primary key. The `ColumnPrimaryKeyExpression` let you use as a key any property or combination of properties.
+You want to update entities, but you don't have the primary key. The `ColumnPrimaryKeyExpression` lets you use as a key any property or combination of properties.
 
 ```csharp
 bulk.AutoMapKeyExpression = c => c.Code;
@@ -136,7 +136,7 @@ bulk.BulkUpdate(invoices.SelectMany(x => x.Items).ToList());
 [Try it (DataTable)](https://dotnetfiddle.net/8C7est) 
 
 ### More scenarios
-Hundred of scenarios has been solved and are now supported.
+Hundreds of scenarios have been solved and are now supported.
 
 The best way to ask for a special request or to find out if a solution for your scenario already exists is by contacting us:
 info@zzzprojects.com
