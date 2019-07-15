@@ -4,7 +4,7 @@
 
 Like SqlBulkCopy, it allows you to perform very fast insertion in an SQL Server.
 
-Unlike SqlBulkCopy, it supports all kind of operations:
+Unlike SqlBulkCopy, it supports all kinds of operations:
 
 - Bulk Insert
 - Bulk Update
