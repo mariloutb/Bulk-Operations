@@ -2,7 +2,7 @@
 
 ## Description
 
-The `BulkInsert` method let you insert a large number of entities in your database.
+The `BulkInsert` method lets you insert a large number of entities in your database.
 
 ```csharp
 // Easy to use
@@ -62,7 +62,7 @@ bulk.BulkInsertAsync(customers, cancellationToken);
 [Try it (Entity)](https://dotnetfiddle.net/ltMk9u)
 
 ### Bulk Insert with options
-The `options` parameter let you customize the way entities are inserted.
+The `options` parameter lets you customize the way entities are inserted.
 
 ```csharp
 bulk.BatchSize = 100;
@@ -94,8 +94,8 @@ bulk.BulkInsert(customers);
 
 You want to insert your entities but only for specific properties.
 
-- `ColumnInputExpression`: This option let you choose which properties to map.
-- `IgnoreOnInsertExpression`: This option let you ignore properties that are auto-mapped.
+- `ColumnInputExpression`: This option lets you choose which properties to map.
+- `IgnoreOnInsertExpression`: This option lets you ignore properties that are auto-mapped.
 
 ```csharp
 bulk.ColumnInputExpression = c => new { c.CustomerID, c.Name};
@@ -111,10 +111,10 @@ bulk.BulkInsert(customers);
 ### Insert only if the entity not already exists
 You want to insert entities but only those that don't already exist in the database.
 
-- `InsertIfNotExists`: This option let you insert only entity that doesn't already exists.
-- `PrimaryKeyExpression`: This option let you customize the key to use to check if the entity already exists or not. This option disable the Auto Mapping.
-- `AutoMapKeyExpression`: This option let you customize the key with an expression and keep the Auto Mapping.
-- `AutoMapKeyName`: This option let you customize the key by names and keep the Auto Mapping.
+- `InsertIfNotExists`: This option lets you insert only entity that doesn't already exists.
+- `PrimaryKeyExpression`: This option lets you customize the key to use to check if the entity already exists or not. This option disable the Auto Mapping.
+- `AutoMapKeyExpression`: This option lets you customize the key with an expression and keep the Auto Mapping.
+- `AutoMapKeyName`: This option lets you customize the key by names and keep the Auto Mapping.
 
 ```csharp
 bulk.InsertIfNotExists = true;
@@ -160,7 +160,7 @@ bulk.BulkInsert(customers);
 [Try it (Entity)](https://dotnetfiddle.net/klt6MY)
 
 ### More scenarios
-Hundred of scenarios has been solved and are now supported.
+Hundreds of scenarios have been solved and are now supported.
 
 The best way to ask for a special request or to find out if a solution for your scenario already exists is by contacting us:
 info@zzzprojects.com
