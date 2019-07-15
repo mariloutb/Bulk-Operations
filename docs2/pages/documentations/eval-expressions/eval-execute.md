@@ -14,7 +14,7 @@ You can specify parameter value to use in the expression from various way:
 - Class Member
 - Dictionary
 
-Under the hood, the fist time an expression is executed, it's getting compiled and the delegate is stored in the memory before being returned and executed. All future call from the same expression will retrieve the delegate from the memory to optimize the performance.
+Under the hood, the fist time an expression is executed, it's getting compiled and the delegate is stored in the memory before being returned and executed. All future calls from the same expression will retrieve the delegate from the memory to optimize the performance.
 
 Even with this optimization, if you have to evaluate the same expression multiple times, for example, in a `for` loop, we highly recommend you to use directly the delegate returning from the Compile method instead.
 
