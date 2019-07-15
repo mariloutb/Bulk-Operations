@@ -1,7 +1,7 @@
 # Bulk Generic Methods
 
 ## Introduction
-Bulk Generic Methods allow you to work with strongly type expression.
+Bulk Generic Methods allow you to work with strong type expression.
 
 | Name      | Description |
 | :-------------- | :------------- |
