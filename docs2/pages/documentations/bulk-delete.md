@@ -47,7 +47,7 @@ The `BulkDelete` method is **fast** but also **flexible** to let you handle vari
 ## Getting Started
 
 ### Bulk Delete
-The `BulkDelete` and `BulkDeleteAync` methods your let you delete a large number of entities in your database.
+The `BulkDelete` and `BulkDeleteAync` methods let you delete a large number of entities in your database.
 
 ```csharp
 bulk.BulkDelete(customers);
@@ -59,7 +59,7 @@ bulk.BulkDeleteAsync(customers, cancellationToken);
 [Try it (Entity)](https://dotnetfiddle.net/p8dt0G) 
 
 ### Bulk Delete with options
-The `options` parameter let you use a lambda expression to customize the way entities are deleted.
+The `options` parameter lets you use a lambda expression to customize the way entities are deleted.
 
 ```csharp
 bulk.BatchSize = 100;
@@ -72,7 +72,7 @@ bulk.BulkDelete(customers);
 ## Real Life Scenarios
 
 ### Delete with custom key
-You want to delete entities, but you don't have the primary key. The `ColumnPrimaryKeyExpression` let you use as a key any property or combination of properties.
+You want to delete entities, but you don't have the primary key. The `ColumnPrimaryKeyExpression` lets you use as a key any property or combination of properties.
 
 ```csharp
 bulk.AutoMapKeyName = "Code";
@@ -87,7 +87,7 @@ bulk.BulkDelete(customers.Take(2));
 [Try it (Entity)](https://dotnetfiddle.net/yc5tqc) 
 
 ### More scenarios
-Hundred of scenarios has been solved and are now supported.
+Hundreds of scenarios have been solved and are now supported.
 
 The best way to ask for a special request or to find out if a solution for your scenario already exists is by contacting us:
 info@zzzprojects.com
