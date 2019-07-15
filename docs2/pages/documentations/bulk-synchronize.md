@@ -2,7 +2,7 @@
 
 ## Description
 
-The `BulkSynchronize` extension method let you synchronize a large number of entities in your database.
+The `BulkSynchronize` extension method lets you synchronize a large number of entities in your database.
 
 A synchronize is a mirror operation from the data source to the database. All rows that match the entity key are `UPDATED`, non-matching rows that exist from the source are `INSERTED`, non-matching rows that exist in the database are `DELETED`.
 
@@ -62,7 +62,7 @@ bulk.BulkSynchronize(dtCustomers);
 [Try it (DataTable)](https://dotnetfiddle.net/LMLvFy)
 
 ### Bulk Synchronize with options
-The `options` parameter let you use a lambda expression to customize the way entities are synchronized.
+The `options` parameter lets you use a lambda expression to customize the way entities are synchronized.
 
 ```csharp
 context.BulkSynchronize(customers, options => options.BatchSize = 100);
@@ -91,9 +91,9 @@ bulk.BulkSynchronize(customers);
 ### Synchronize and include/exclude properties
 You want to synchronize your entities but only for specific properties.
 
-- `ColumnInputExpression`: This option let you choose which properties to map.
-- `IgnoreOnSynchronizeInsertExpression`: This option let you ignore when inserting properties that are auto-mapped.
-- `IgnoreOnSynchronizeUpdateExpression`: This option let you ignore when updating properties that are auto-mapped.
+- `ColumnInputExpression`: This option lets you choose which properties to map.
+- `IgnoreOnSynchronizeInsertExpression`: This option lets you ignore when inserting properties that are auto-mapped.
+- `IgnoreOnSynchronizeUpdateExpression`: This option lets you ignore when updating properties that are auto-mapped.
 
 ```csharp
 bulk.IgnoreOnSynchronizeInsertExpression = c => c.UpdatedDate;
@@ -122,7 +122,7 @@ bulk.BulkSynchronize(dtCustomers);
 [Try it (DataTable)](https://dotnetfiddle.net/bAq5hA)  
 
 ### Synchronize with custom key
-You want to synchronize entities, but you don't have the primary key. The `ColumnPrimaryKeyExpression` let you use as a key any property or combination of properties.
+You want to synchronize entities, but you don't have the primary key. The `ColumnPrimaryKeyExpression` lets you use as a key any property or combination of properties.
 
 ```csharp
 bulk.AutoMapKeyExpression = customer => customer.Code;
@@ -137,7 +137,7 @@ bulk.BulkSynchronize(dtCustomers);
 [Try it (DataTable)](https://dotnetfiddle.net/SGkrot)  
 
 ### More scenarios
-Hundred of scenarios has been solved and are now supported.
+Hundreds of scenarios have been solved and are now supported.
 
 The best way to ask for a special request or to find out if a solution for your scenario already exists is by contacting us:
 info@zzzprojects.com
