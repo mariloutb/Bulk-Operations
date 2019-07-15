@@ -6,9 +6,9 @@
 - [BatchDelayInteval](#batchdelayinterval)
 
 ## BatchSize
-Allow you to set the number of records to use in a batch.
+Allows you to set the number of records to use in a batch.
 
-By example, if you insert 1000 entities, and you set a batch size of 100, then ten inserts will be performed.
+For example, if you insert 1000 entities, and you set a batch size of 100, then ten inserts will be performed.
 
 ### Example
 ```csharp
@@ -20,7 +20,7 @@ bulk.BulkMerge(dt);
 ```
 
 ## BatchTimeout
-Allow you to set the maximum of time elapsing for a batch before the command throws a timeout exception.
+Allows you to set the maximum time elapsing for a batch before the command throws a timeout exception.
 
 ### Example
 ```csharp
@@ -32,7 +32,7 @@ bulk.BulkMerge(dt);
 ```
 
 ## BatchDelayInterval
-Allow you to set a delay between every batch.
+Allows you to set a delay between every batch.
 
 ### Example
 ```csharp
@@ -44,4 +44,4 @@ bulk.BulkMerge(dt);
 ```
 
 
-> WARNING: Be careful, this options can often cause lock/deadlock within a transaction.
+> WARNING: Be careful, this option can often cause lock/deadlock within a transaction.
