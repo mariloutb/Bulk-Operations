@@ -6,7 +6,7 @@
 - [LogDump](#logdump)
 
 ## Log
-Allow you to log some event happening in your database.
+Allows you to log some event happening in your database.
 
 ### Example
 ```csharp
@@ -19,7 +19,7 @@ bulk.BulkMerge(dt);
 ```
 
 ## UseLogDump
-Allow you to log in a string (LogDump) event happening in your database.
+Allows you to log in a string (LogDump) an event happening in your database.
 
 ### Example
 ```csharp
@@ -33,7 +33,7 @@ var logDump = bulk.LogDump;
 ```
 
 ## LogDump
-Allow you to retrieve event happening in your database when UseLogDump is enabled.
+Allows you to retrieve an event happening in your database when UseLogDump is enabled.
 
 ### Example
 ```csharp
