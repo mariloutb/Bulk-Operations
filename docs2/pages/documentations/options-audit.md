@@ -1,7 +1,7 @@
 # Audit
 
 ## UseAudit
-Allow you to audit inserted/deleted rows from the database.
+Allows you to audit inserted/deleted rows from the database.
 
 - Default Value: False
 
